@@ -42,7 +42,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kysion/types.git"
+    "url": "git+https://github.com/kysion/types.git"
   },
   "homepage": "https://github.com/kysion/types#readme",
   "bugs": {
@@ -77,4 +77,4 @@
     "ts-jest": "^29.2.6",
     "typescript": "^5.8.2"
   }
-} 
+}
