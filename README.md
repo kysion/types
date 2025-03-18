@@ -168,7 +168,6 @@ interface IBaseModel<T extends IBaseType> extends IBaseType {
   fromJson(jsonStr: string): T;
   toString(): string;
 }
-```
 
 // 创建可存储设置模型
 class Settings extends ModelWithStorage<Settings> implements ILocalStorage<Settings> {
