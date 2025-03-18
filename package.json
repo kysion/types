@@ -1,7 +1,7 @@
 {
   "name": "@kysion/types",
   "version": "1.0.0",
-  "description": "Kysion Admin系统的核心类型定义包，提供统一的API接口类型、数据模型、组件Props和状态管理的TypeScript类型定义，支持模型序列化和本地存储",
+  "description": "TypeScript类型定义库，包含完整的数据模型系统和API类型。提供BaseModel基类、标准化查询参数和全面的业务类型定义，增强应用程序的类型安全性",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "lib/index.d.ts",
@@ -24,15 +24,8 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "typescript",
-    "types",
     "kysion",
-    "admin",
-    "model",
-    "api-types",
-    "data-models",
-    "type-definitions",
-    "serialization"
+    "dto"
   ],
   "author": "SupenBysz",
   "license": "MIT",
