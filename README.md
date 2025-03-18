@@ -4,7 +4,7 @@ Kysion Admin系统的核心类型定义库，提供统一的API接口类型、�
 
 [![npm version](https://img.shields.io/npm/v/@kysion/types.svg)](https://www.npmjs.com/package/@kysion/types)
 [![npm downloads](https://img.shields.io/npm/dm/@kysion/types.svg)](https://www.npmjs.com/package/@kysion/types)
-[![license](https://img.shields.io/npm/l/@kysion/types.svg)](https://github.com/kysion/kysion/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/@kysion/types.svg)](LICENSE)
 
 ## 特性亮点
 
@@ -46,12 +46,9 @@ class Product extends BaseModel<Product> {
   }
 }
 
-// 创建实例
+// 创建实例并序列化
 const product = new Product({ name: '智能手机', price: 4999 });
-
-// 序列化为JSON
 const json = product.toJson();
-console.log(json); // {"id":0,"name":"智能手机","price":4999}
 
 // 不可变更新 (创建新实例而不修改原实例)
 const discountedProduct = product.copyWith({ price: 3999 });
@@ -62,48 +59,37 @@ console.log(discountedProduct.price); // 3999 (新实例)
 ### 使用API响应类型
 
 ```typescript
-import { KyResponse, PaginationResult, UserInfoType } from '@kysion/types';
+import { KyResponse, PaginationResult } from '@kysion/types';
 
-// 定义API请求函数
-async function fetchUsers(page: number, size: number): Promise<KyResponse<PaginationResult<UserInfoType>>> {
-  const response = await fetch(`/api/users?page=${page}&size=${size}`);
+// 类型化API响应
+async function fetchData(): Promise<KyResponse<PaginationResult<any>>> {
+  const response = await fetch('/api/data');
   return response.json();
 }
 
 // 使用
-const result = await fetchUsers(1, 10);
+const result = await fetchData();
 if (result.code === 0) {
   const { list, total } = result.data;
-  console.log(`总用户数: ${total}`);
-  console.log(`当前页用户:`, list);
+  console.log(`共${total}条数据`);
 }
 ```
 
-### 使用查询参数
+## 核心类型概览
 
-```typescript
-import { PaginationParams, FilterParams, SortParams } from '@kysion/types';
+### 基础类型
 
-// 构建查询参数
-const queryParams: PaginationParams & FilterParams & SortParams = {
-  pageNum: 1,
-  pageSize: 20,
-  filter: {
-    status: 'active',
-    createdAt: { $gt: '2023-01-01' }
-  },
-  orderBy: 'createdAt',
-  orderDir: 'desc'
-};
+- `BaseModel<T>` - 模型基类，提供序列化和部分更新功能
+- `KyResponse<T>` - 标准API响应格式
+- `PaginationParams` - 分页请求参数
+- `PaginationResult<T>` - 分页响应结果
+- `QueryParams/SortParams/FilterParams` - 查询相关参数
 
-// 发送请求
-const response = await fetch('/api/data?' + new URLSearchParams({
-  ...queryParams,
-  filter: JSON.stringify(queryParams.filter)
-}));
-```
+### 业务类型
 
-## 核心类型
+- **用户相关**: `UserInfoType`, `UserDetailType`, `UserStatusEnum`...
+- **权限相关**: `PermissionType`, `RoleType`, `MenuItemType`...
+- **组织相关**: `CompanyType`, `DepartmentType`, `EmployeeType`...
 
 ### BaseModel
 
@@ -184,44 +170,20 @@ interface IBaseModel<T extends IBaseType> extends IBaseType {
 }
 ```
 
-#### ILocalStorage
-
-本地存储接口，用于与@kysion/utils的ModelWithStorage配合使用：
-
-```typescript
-interface ILocalStorage<T extends IBaseModel<T>> extends IBaseModel<T> {
-  clear(): void;
-  save(): T;
-  reload(): T;
-  init(): void;
+// 创建可存储设置模型
+class Settings extends ModelWithStorage<Settings> implements ILocalStorage<Settings> {
+  theme: string = 'light';
+  fontSize: number = 14;
+  
+  constructor() {
+    super('app_settings');
+  }
 }
 ```
 
-> 📝 注意：此接口定义了本地存储操作，具体实现在@kysion/utils包的ModelWithStorage类中
+## 相关包
 
-### 响应类型
-
-```typescript
-// 标准API响应
-class KyResponse<T = any> {
-  data: T | null = null;
-  code: number = 0;
-  message: string = "";
-  time: string = "";
-}
-
-// 分页结果
-interface PaginationResult<T> {
-  list: T[];
-  total: number;
-  pageNum: number;
-  pageSize: number;
-}
-```
-
-## 业务类型
-
-@kysion/types提供了丰富的业务类型定义，详情请参阅[API文档](https://github.com/kysion/kysion/tree/main/packages/types#api-documentation)。
+- [@kysion/utils](https://www.npmjs.com/package/@kysion/utils) - 实用工具库
 
 ### 用户相关
 
@@ -267,16 +229,18 @@ type NonNullableProperties<T> = {
 # 安装依赖
 npm install
 
-# 类型检查
-npm run type-check
-
-# 构建库
+# 构建
 npm run build
 
-# 运行测试
-npm test
+# 类型检查
+npm run type-check
 ```
+
+## 贡献指南
+
+欢迎贡献代码或提出问题！请先阅读我们的[贡献指南](./CONTRIBUTING.md)。
 
 ## 许可证
 
-[MIT](https://github.com/kysion/kysion/blob/main/LICENSE) 
+[MIT](LICENSE)
+Copyright (c) 2025 Kysion

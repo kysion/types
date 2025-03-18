@@ -24,8 +24,19 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
+    "typescript",
+    "types",
     "kysion",
-    "dto"
+    "admin",
+    "model",
+    "api-types",
+    "data-models",
+    "type-definitions",
+    "serialization",
+    "interfaces",
+    "dto",
+    "query-params",
+    "typescript-definitions"
   ],
   "author": "SupenBysz",
   "license": "MIT",
@@ -33,7 +44,7 @@
     "type": "git",
     "url": "https://github.com/kysion/types.git"
   },
-  "homepage": "https://github.com/kysion/types/tree/main/packages/types#readme",
+  "homepage": "https://github.com/kysion/types#readme",
   "bugs": {
     "url": "https://github.com/kysion/types/issues"
   },
