@@ -1,0 +1,76 @@
+{
+  "name": "@kysion/types",
+  "version": "1.0.0",
+  "description": "Kysion Admin系统的核心类型定义包，提供统一的API接口类型、数据模型、组件Props和状态管理的TypeScript类型定义，支持模型序列化和本地存储",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:lib && npm run build:es",
+    "build:lib": "tsc -p tsconfig.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:test": "tsc -p tsconfig.test.json --noEmit",
+    "clean": "rimraf lib es",
+    "type-check": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "kysion",
+    "admin",
+    "model",
+    "api-types",
+    "data-models",
+    "type-definitions",
+    "serialization"
+  ],
+  "author": "SupenBysz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kysion/types.git"
+  },
+  "homepage": "https://github.com/kysion/types/tree/main/packages/types#readme",
+  "bugs": {
+    "url": "https://github.com/kysion/types/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "dayjs": "^1.11.13"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.8.2",
+    "react": ">=19.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.11",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
+  }
+} 
