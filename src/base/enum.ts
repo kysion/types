@@ -1,4 +1,5 @@
-export type ValueOf<T, K extends keyof T = keyof T> = T[K];
+import { ValueOf } from "..";
+
 
 // 性别枚举包装
 export type SexType = {

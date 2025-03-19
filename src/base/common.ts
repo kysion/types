@@ -27,4 +27,4 @@ export type RecordRequired<K extends keyof any, T> = {
 // 移除属性中的null和undefined
 export type NonNullableProperties<T> = {
     [P in keyof T]: NonNullable<T[P]>;
-}; 
+};

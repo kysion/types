@@ -9,7 +9,7 @@ Kysion Admin系统的核心类型定义库，提供统一的API接口类型、�
 ## 特性亮点
 
 - 🔄 **强大的模型系统** - BaseModel实现对象序列化与不可变更新
-- 🧩 **丰富的业务类型** - 覆盖用户、权限、菜单等全方位业务模型
+- 🧩 **丰富的业务类型** - 覆盖用户、权限、菜单、渠道等全方位业务模型
 - 🔍 **查询参数标准化** - 统一的分页、排序、过滤参数定义
 - 🛠️ **实用工具类型** - 提供常用TypeScript类型工具和助手
 - 📦 **模块化组织** - 按业务领域清晰划分的类型定义
@@ -90,6 +90,7 @@ if (result.code === 0) {
 - **用户相关**: `UserInfoType`, `UserDetailType`, `UserStatusEnum`...
 - **权限相关**: `PermissionType`, `RoleType`, `MenuItemType`...
 - **组织相关**: `CompanyType`, `DepartmentType`, `EmployeeType`...
+- **渠道相关**: `ChannelInfoType` - 渠道平台信息类型...
 
 ### BaseModel
 
@@ -180,10 +181,6 @@ class Settings extends ModelWithStorage<Settings> implements ILocalStorage<Setti
 }
 ```
 
-## 相关包
-
-- [@kysion/utils](https://www.npmjs.com/package/@kysion/utils) - 实用工具库
-
 ### 用户相关
 
 - `UserInfoType` - 用户基本信息
@@ -201,6 +198,10 @@ class Settings extends ModelWithStorage<Settings> implements ILocalStorage<Setti
 - `CompanyType` - 公司信息
 - `DepartmentType` - 部门信息
 - `EmployeeType` - 员工信息
+
+### 业务相关
+
+- `ChannelInfoType` - 渠道信息类型
 
 ## 工具类型
 

@@ -6,6 +6,7 @@ export * from './captcha';
 export * from './category';
 export * from './company';
 export * from './comment';
+export * from './common';
 export * from './delivery-company'
 export * from './employee';
 export * from './financial';
@@ -21,3 +22,4 @@ export * from './setting';
 export * from './team';
 export * from './upload/idcard';
 export * from './user';
+export * from './channel';

@@ -1,6 +1,6 @@
 {
   "name": "@kysion/types",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "TypeScript类型定义库，包含完整的数据模型系统和API类型。提供BaseModel基类、标准化查询参数和全面的业务类型定义，增强应用程序的类型安全性",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -14,13 +14,9 @@
     "build": "npm run clean && npm run build:lib && npm run build:es",
     "build:lib": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
-    "build:test": "tsc -p tsconfig.test.json --noEmit",
-    "clean": "rimraf lib es",
+    "clean": "rm -fr lib es",
     "type-check": "tsc --noEmit",
     "lint": "tsc --noEmit",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -71,10 +67,7 @@
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.11",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
     "rimraf": "^6.0.1",
-    "ts-jest": "^29.2.6",
     "typescript": "^5.8.2"
   }
 }

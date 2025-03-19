@@ -3,6 +3,12 @@
     "target": "es2015",
     "module": "commonjs",
     "declaration": true,
+    "types": [
+      "jest",
+      "lodash",
+      "node",
+      "react"
+    ],
     "outDir": "lib",
     "strict": true,
     "esModuleInterop": true,
@@ -15,8 +21,17 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "lib": ["es2015", "dom"]
+    "lib": [
+      "es2015",
+      "dom"
+    ]
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "lib", "es"]
-} 
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es"
+  ]
+}

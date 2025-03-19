@@ -4,3 +4,4 @@ export * from './query';
 export * from './records';
 export * from './enum';
 export * from './response';
+export * from './common';
