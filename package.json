@@ -2,19 +2,18 @@
   "name": "@kysion/types",
   "version": "1.0.8",
   "description": "TypeScript类型定义库，包含完整的数据模型系统和API类型。提供BaseModel基类、标准化查询参数和全面的业务类型定义，增强应用程序的类型安全性",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/lib/index.d.ts",
   "files": [
-    "lib",
-    "es",
+    "dist",
     "README.md"
   ],
   "scripts": {
     "build": "npm run clean && npm run build:lib && npm run build:es",
     "build:lib": "tsc -p tsconfig.json",
     "build:es": "tsc -p tsconfig.es.json",
-    "clean": "rm -fr lib es",
+    "clean": "rm -fr dist",
     "type-check": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "prepublishOnly": "npm run build"
