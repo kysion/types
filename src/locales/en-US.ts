@@ -8,6 +8,28 @@ export default {
     'kysion.common.enum.Yes': 'Yes',
     'kysion.common.enum.No': 'No',
 
+    // Common actions (common/action.ts)
+    'kysion.common.refresh.tooltip': 'Refresh',
+    'kysion.table.column.setting.title': 'Column Settings',
+    'kysion.table.pagination.showTotal': 'Total {total} records, showing {begin}-{end}',
+
+    // Query conditions (base/query.ts)
+    'kysion.query.Equal': 'Equal',
+    'kysion.query.GreaterThan': 'Greater Than',
+    'kysion.query.GreaterThanOrEqual': 'Greater Than or Equal',
+    'kysion.query.LessThan': 'Less Than',
+    'kysion.query.LessThanOrEqual': 'Less Than or Equal',
+    'kysion.query.NotEqual': 'Not Equal',
+    'kysion.query.In': 'In',
+    'kysion.query.Like': 'Like',
+    'kysion.query.Like.PrefixContain': 'Prefix Match',
+    'kysion.query.Like.Contain': 'Contains',
+    'kysion.query.Like.SuffixContain': 'Suffix Match',
+    'kysion.query.Sort.None': 'No Sort',
+    'kysion.query.Sort.Auto': 'Auto',
+    'kysion.query.Sort.Asc': 'Ascending',
+    'kysion.query.Sort.Desc': 'Descending',
+
     // User status (user/enum.ts)
     'kysion.common.enum.state.Unactivated': 'Unactivated',
     'kysion.common.enum.state.Normal': 'Normal',

@@ -8,6 +8,28 @@ export default {
     'kysion.common.enum.Yes': '是',
     'kysion.common.enum.No': '否',
 
+    // 通用操作 (common/action.ts)
+    'kysion.common.refresh.tooltip': '刷新',
+    'kysion.table.column.setting.title': '列设置',
+    'kysion.table.pagination.showTotal': '共 {total} 条记录，当前显示 {begin}-{end} 条',
+
+    // 查询条件 (base/query.ts)
+    'kysion.query.Equal': '等于',
+    'kysion.query.GreaterThan': '大于',
+    'kysion.query.GreaterThanOrEqual': '大于等于',
+    'kysion.query.LessThan': '小于',
+    'kysion.query.LessThanOrEqual': '小于等于',
+    'kysion.query.NotEqual': '不等于',
+    'kysion.query.In': '在列',
+    'kysion.query.Like': '模糊匹配',
+    'kysion.query.Like.PrefixContain': '前缀匹配',
+    'kysion.query.Like.Contain': '包含',
+    'kysion.query.Like.SuffixContain': '后缀匹配',
+    'kysion.query.Sort.None': '不排序',
+    'kysion.query.Sort.Auto': '自动',
+    'kysion.query.Sort.Asc': '升序',
+    'kysion.query.Sort.Desc': '降序',
+
     // 用户状态 (user/enum.ts)
     'kysion.common.enum.state.Unactivated': '未激活',
     'kysion.common.enum.state.Normal': '正常',
