@@ -23,3 +23,4 @@ export * from './team';
 export * from './upload/idcard';
 export * from './user';
 export * from './channel';
+export * from './locales';
