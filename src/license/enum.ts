@@ -1,19 +1,27 @@
 import { ValueOf } from "../base";
 
+type AuthStateType = {
+  value: AuthStateSet,
+  i18nLabel: string,
+  color: string
+}
+
 // 状态：0失效、1正常
 export const authStateSet = {
   Invalid: 0,
-  Normal: 1
+  Normal: 1,
+  UnVerified: -1,
 } as const;
 
 export type AuthStateSet = ValueOf<typeof authStateSet>;
 
-export const AuthStateArr: readonly [AuthStateSet, string][] = [
-  [authStateSet.Invalid, 'kysion.authState.Invalid'],
-  [authStateSet.Normal, 'kysion.authState.Normal']
+export const AuthStateArr: readonly AuthStateType[] = [
+  { value: authStateSet.Invalid, i18nLabel: 'kysion.company.column.license.Invalid', color: 'default' },
+  { value: authStateSet.Normal, i18nLabel: 'kysion.company.column.license.Normal', color: 'success' },
+  { value: authStateSet.UnVerified, i18nLabel: 'kysion.company.column.license.UnVerified', color: 'volcano' }
 ];
 
-export const AuthStateMap = new Map<AuthStateSet, string>(AuthStateArr.map(item => [item[0], item[1]]));
+export const AuthStateMap = new Map<AuthStateSet, AuthStateType>(AuthStateArr.map(item => [item.value, item]));
 
 // 认证类型
 export const authTypeSet = {
