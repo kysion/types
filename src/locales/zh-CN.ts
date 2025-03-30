@@ -119,5 +119,11 @@ export default {
     'kysion.common.enum.menu.Menu': '菜单',
     'kysion.common.enum.menu.Button': '功能/按钮',
     'kysion.common.enum.menu.CurrentPageOpen': '当前页面打开',
-    'kysion.common.enum.menu.NewTabOpen': '新标签页打开'
+    'kysion.common.enum.menu.NewTabOpen': '新标签页打开',
+
+    // 图标选择器
+    'system.menu.icon.placeholder': '点击选择图标，例如: carbon:menu',
+    'system.menu.icon.select': '选择图标',
+    'system.menu.icon.search': '请输入图标关键词，搜索图标',
+    'system.menu.icon.empty': '暂无图标，请输入关键词搜索',
 } as const; 
