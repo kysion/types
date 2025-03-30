@@ -119,5 +119,15 @@ export default {
     'kysion.common.enum.menu.Menu': 'Menu',
     'kysion.common.enum.menu.Button': 'Function/Button',
     'kysion.common.enum.menu.CurrentPageOpen': 'Current Page Open',
-    'kysion.common.enum.menu.NewTabOpen': 'New Tab Open'
+    'kysion.common.enum.menu.NewTabOpen': 'New Tab Open',
+
+    // User types (user/enum.ts)
+    'kysion.common.enum.userType.Anonymous': 'Anonymous',
+    'kysion.common.enum.userType.User': 'User',
+    'kysion.common.enum.userType.UserLeader': 'Team Leader',
+    'kysion.common.enum.userType.Merchant': 'Merchant',
+    'kysion.common.enum.userType.Member': 'Member',
+    'kysion.common.enum.userType.Agent': 'Agent',
+    'kysion.common.enum.userType.SubCompany': 'Branch Company',
+    'kysion.common.enum.userType.HeadCompany': 'Head Company'
 } as const; 

@@ -126,4 +126,14 @@ export default {
     'system.menu.icon.select': '选择图标',
     'system.menu.icon.search': '请输入图标关键词，搜索图标',
     'system.menu.icon.empty': '暂无图标，请输入关键词搜索',
+
+    // 用户类型 (user/enum.ts)
+    'kysion.common.enum.userType.Anonymous': '匿名',
+    'kysion.common.enum.userType.User': '用户',
+    'kysion.common.enum.userType.UserLeader': '团长',
+    'kysion.common.enum.userType.Merchant': '商户',
+    'kysion.common.enum.userType.Member': '会员',
+    'kysion.common.enum.userType.Agent': '代理',
+    'kysion.common.enum.userType.SubCompany': '分公司',
+    'kysion.common.enum.userType.HeadCompany': '总公司',
 } as const; 

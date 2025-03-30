@@ -49,3 +49,42 @@ export const i18nUserState = {
     'kysion.common.enum.state.LoggedOut': 'Logged Out'
   }
 };
+
+// 用户类型类型
+export type UserType = {
+  value: UserTypeSet,
+  i18nLabel: string,
+  color: UserTypeColor
+};
+
+// 用户类型集合
+export const userTypeSet = {
+  Anonymous: 0,
+  User: 1,
+  UserLeader: 2,
+  Merchant: 4,
+  Member: 8,
+  Agent: 512,
+  SubCompany: 1024,
+  HeadCompany: 2048
+} as const;
+
+export type UserTypeSet = ValueOf<typeof userTypeSet>;
+
+// 用户类型颜色类型
+type UserTypeColor = 'default' | 'blue' | 'green' | 'gold' | 'purple' | 'red' | 'orange' | 'cyan';
+
+// 用户类型数组
+export const UserTypeArr: readonly UserType[] = [
+  { value: userTypeSet.Anonymous, i18nLabel: 'kysion.common.enum.userType.Anonymous', color: 'default' },
+  { value: userTypeSet.User, i18nLabel: 'kysion.common.enum.userType.User', color: 'blue' },
+  { value: userTypeSet.UserLeader, i18nLabel: 'kysion.common.enum.userType.UserLeader', color: 'green' },
+  { value: userTypeSet.Merchant, i18nLabel: 'kysion.common.enum.userType.Merchant', color: 'gold' },
+  { value: userTypeSet.Member, i18nLabel: 'kysion.common.enum.userType.Member', color: 'purple' },
+  { value: userTypeSet.Agent, i18nLabel: 'kysion.common.enum.userType.Agent', color: 'red' },
+  { value: userTypeSet.SubCompany, i18nLabel: 'kysion.common.enum.userType.SubCompany', color: 'orange' },
+  { value: userTypeSet.HeadCompany, i18nLabel: 'kysion.common.enum.userType.HeadCompany', color: 'cyan' }
+];
+
+// 用户类型映射
+export const UserTypeMap = new Map<UserTypeSet, UserType>(UserTypeArr.map(item => [item.value, item]));
