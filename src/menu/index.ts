@@ -18,7 +18,7 @@ export class MenuItemType extends BaseModel<MenuItemType> {
   // 简称，默认值为""
   sortTitle: string = "";
   // 国际化Key，默认值为""
-  i18nKey: string = "";
+  i18NKey: string = "";
   // 图标，默认值为""
   icon: string | undefined = undefined;
   // 布局，默认值为""
