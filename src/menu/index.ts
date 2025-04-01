@@ -1,5 +1,5 @@
 import cloneDeep from 'lodash/cloneDeep';
-import { BaseModel, yesNoStateSet, YesNoStateSet } from '../base';
+import { BaseModel, enabledStateSet, EnabledStateSet, yesNoStateSet, YesNoStateSet } from '../base';
 import { jumpTypeSet, JumpTypeSet, MenuTypeSet, menuTypeSet } from './enum';
 
 export * from './enum';
@@ -15,8 +15,14 @@ export class MenuItemType extends BaseModel<MenuItemType> {
   redirect: string = "";
   // 标题，默认值为""
   title: string = "";
+  // 简称，默认值为""
+  sortTitle: string = "";
+  // 国际化Key，默认值为""
+  i18nKey: string = "";
   // 图标，默认值为""
   icon: string | undefined = undefined;
+  // 布局，默认值为""
+  layout: string = "";
   // 组件，默认值为""
   component: string = "";
   // 所属父级，默认值为0，类型为React.Key
@@ -24,7 +30,9 @@ export class MenuItemType extends BaseModel<MenuItemType> {
   // 排序，默认值为0
   sort: number | undefined = undefined;
   // 状态：0隐藏，1显示，默认值为0
-  state: YesNoStateSet = yesNoStateSet.No;
+  state: EnabledStateSet = enabledStateSet.Enabled;
+  // 是否隐藏，默认值为false
+  hidden: YesNoStateSet = yesNoStateSet.No;
   // 描述，默认值为""
   description: string = "";
   // 创建时间，默认值为""

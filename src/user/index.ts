@@ -3,6 +3,7 @@ import { BaseModel } from '../base';
 import { Dayjs } from 'dayjs';
 
 export * from './enum'
+export * from './props'
 
 // 用户信息类，用于封装用户信息对象
 export class UserInfoType extends BaseModel<UserInfoType> {
