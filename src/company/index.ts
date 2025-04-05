@@ -2,10 +2,10 @@ import { cloneDeep } from "lodash";
 import { BaseModel } from "../base";
 import { UserInfoType } from "../user";
 import { authStateSet, AuthStateSet } from "../license/enum";
-
+import { companyStateSet, CompanyStateSet } from "./enum";
 export * from './enum';
 
-export class CompanyType extends BaseModel<CompanyType> {
+export class CompanyInfoType extends BaseModel<CompanyInfoType> {
   // ID
   id: React.Key = 0;
   // 名称
@@ -17,7 +17,7 @@ export class CompanyType extends BaseModel<CompanyType> {
   // 管理员ID
   userId: React.Key = 0;
   // 状态：0未启用，1正常
-  state: number = 0;
+  state: CompanyStateSet = companyStateSet.Disabled;
   // 备注
   remark: string = '';
   // 创建者
@@ -39,7 +39,7 @@ export class CompanyType extends BaseModel<CompanyType> {
   // 主体资质id
   licenseId: React.Key = 0;
   // 主体状态,和主体资质状态保持一致
-  licenseState: AuthStateSet = authStateSet.Invalid;
+  licenseState: AuthStateSet = authStateSet.UnVerified;
   // 所属国家编码
   countryCode: string = '';
   // 所属地区
@@ -53,7 +53,7 @@ export class CompanyType extends BaseModel<CompanyType> {
   // 图文媒体文件
   mediaJson: string = '';
 
-  constructor(initState: Partial<CompanyType> = {}) {
+  constructor(initState: Partial<CompanyInfoType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }

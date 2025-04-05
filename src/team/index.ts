@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash';
-import { BaseModel, CompanyType, EmployeeType, ValueOf } from '..';
+import { BaseModel, CompanyInfoType, EmployeeType, ValueOf } from '..';
 import { Dayjs } from 'dayjs';
 
 // 邀请码类型类型
@@ -71,7 +71,7 @@ export class TeamType extends BaseModel<TeamType> {
   // 队长
   captain?: EmployeeType;
   // 所属主体
-  unionMain?: CompanyType;
+  unionMain?: CompanyInfoType;
   // 父级
   parent?: TeamType;
 
