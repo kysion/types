@@ -1,4 +1,7 @@
+import { i18nCountry } from "../base";
+
 export default {
+    ...i18nCountry.en_US,
     // Base enums (base/enum.ts)
     'kysion.common.enum.base.Unknown': 'Unknown',
     'kysion.common.enum.Male': 'Male',
