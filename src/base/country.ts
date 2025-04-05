@@ -228,7 +228,7 @@ export const countryCodeSet = {
   ZW: "ZW"
 } as const;
 
-export type CountryCodeSet = typeof countryCodeSet[keyof typeof countryCodeSet];
+export type CountryCodeSet = typeof countryCodeSet[keyof typeof countryCodeSet] | '';
 
 export const CountryArr: readonly CountryType[] = [
   { value: countryCodeSet.AD, mobilePrefix: 376, emoji: "🇦🇩" },

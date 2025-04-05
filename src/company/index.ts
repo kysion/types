@@ -3,6 +3,7 @@ import { BaseModel } from "../base";
 import { UserInfoType } from "../user";
 import { authStateSet, AuthStateSet } from "../license/enum";
 import { companyStateSet, CompanyStateSet } from "./enum";
+import { countryCodeSet, CountryCodeSet } from "../base/country";
 export * from './enum';
 
 export class CompanyInfoType extends BaseModel<CompanyInfoType> {
@@ -41,7 +42,7 @@ export class CompanyInfoType extends BaseModel<CompanyInfoType> {
   // 主体状态,和主体资质状态保持一致
   licenseState: AuthStateSet = authStateSet.UnVerified;
   // 所属国家编码
-  countryCode: string = '';
+  countryCode: CountryCodeSet | '' = '';
   // 所属地区
   region: string = '';
   // 返回数据(业务接口定义具体数据结构)

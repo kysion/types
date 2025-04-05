@@ -8,9 +8,9 @@ type AuthStateType = {
 
 // 状态：0失效、1正常
 export const authStateSet = {
-  Invalid: 0,
+  Invalid: -1,
   Normal: 1,
-  UnVerified: -1,
+  UnVerified: 0,
 } as const;
 
 export type AuthStateSet = ValueOf<typeof authStateSet>;

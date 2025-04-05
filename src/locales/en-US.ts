@@ -13,7 +13,7 @@ export default {
 
     // Common actions (common/action.ts)
     'kysion.common.refresh.tooltip': 'Refresh',
-    'kysion.table.column.setting.title': 'Column Settings',
+    'kysion.table.column.setting.title': 'Column preferences',
     'kysion.table.pagination.showTotal': 'Total {total} records, showing {begin}-{end}',
 
     // Query conditions (base/query.ts)

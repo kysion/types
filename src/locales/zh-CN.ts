@@ -13,7 +13,7 @@ export default {
 
     // 通用操作 (common/action.ts)
     'kysion.common.refresh.tooltip': '刷新',
-    'kysion.table.column.setting.title': '列设置',
+    'kysion.table.column.setting.title': '列偏好设置',
     'kysion.table.pagination.showTotal': '共 {total} 条记录，当前显示 {begin}-{end} 条',
 
     // 查询条件 (base/query.ts)
