@@ -51,8 +51,6 @@ export class CompanyInfoType extends BaseModel<CompanyInfoType> {
   score: number = 0;
   // LOGO
   logoId: React.Key = 0;
-  // 图文媒体文件
-  mediaJson: string = '';
 
   constructor(initState: Partial<CompanyInfoType> = {}) {
     super();
