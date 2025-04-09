@@ -26,7 +26,7 @@ export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   // 最后活跃IP，默认为空字符串
   lastActiveIp: string = '';
   // 入职时间，默认为空字符串
-  hiredAt: Dayjs | string = '';
+  hiredAt: Dayjs | undefined | string = '';
   // 创建者ID，默认为0
   createdBy: React.Key = 0;
   // 创建时间，默认为空字符串
