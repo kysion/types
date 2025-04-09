@@ -8,7 +8,7 @@ import { Dayjs } from "dayjs";
 export * from "./enum"
 
 /** 员工类，实现了IEmployee接口，用于创建和管理员工实例 */
-export class EmployeeType extends BaseModel<EmployeeType> {
+export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   // ID
   id: React.Key = 0;
   // 员工编号，默认为空字符串
@@ -61,7 +61,7 @@ export class EmployeeType extends BaseModel<EmployeeType> {
    *
    * @param initState 部分员工信息对象，用于初始化员工实例，可选
    */
-  constructor(initState: Partial<EmployeeType> = {}) {
+  constructor(initState: Partial<EmployeeInfoType> = {}) {
     // 调用父类的构造函数，并传入部分员工信息对象
     super();
     Object.assign(this, cloneDeep(initState));

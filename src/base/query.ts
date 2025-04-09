@@ -66,6 +66,7 @@ export class Filter {
   value: any = null;
   isNullValue?: boolean;
   modifier?: ModifierType;
+  children?: Filter[];
 
   /**
    * 创建一个新的 Response 对象。

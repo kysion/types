@@ -1,11 +1,11 @@
 import { cloneDeep } from 'lodash';
-import { BaseModel, EmployeeType, UserInfoType } from '..';
+import { BaseModel, EmployeeInfoType, UserInfoType } from '..';
 
 export class ProfileType extends BaseModel<ProfileType> {
   // 可选的用户信息，用于存储普通用户的具体信息
   user?: UserInfoType;
   // 可选的员工信息，用于存储属于公司员工的具体信息
-  employee?: EmployeeType;
+  employee?: EmployeeInfoType;
   // 标识该用户是否为管理员，用于区分普通用户和管理员
   isAdmin = false;
   // 标识该用户是否为超级管理员，超级管理员通常拥有更高的权限级别
