@@ -1,7 +1,7 @@
 import { cloneDeep } from "lodash";
 import { BaseModel, sexSet, SexSet } from "../base";
 import { UserDetailType, UserInfoType } from "../user";
-import { TeamType } from "../team";
+import { TeamInfoType } from "../team";
 import { employeeStateSet, EmployeeStateSet } from "./enum";
 import { Dayjs } from "dayjs";
 
@@ -54,7 +54,7 @@ export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   // 用户信息（可选），默认为null
   user: UserInfoType | null = null;
   // 所属团队列表，默认为空数组
-  teamList: TeamType[] = [];
+  teamList: TeamInfoType[] = [];
 
   /**
    * 构造函数，用于创建员工实例

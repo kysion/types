@@ -45,7 +45,7 @@ export const i18nInvite = {
 };
 
 
-export class TeamType extends BaseModel<TeamType> {
+export class TeamInfoType extends BaseModel<TeamInfoType> {
   // ID
   id: React.Key = 0;
   // 名称
@@ -60,8 +60,8 @@ export class TeamType extends BaseModel<TeamType> {
   remark: string = '';
   // 类型：默认 0，保留字段
   type: number = 0;
-  // 头像
-  avatar: string = '';
+  // LogoId
+  logoId: string = '';
   // 口号
   slogan: string = '';
   // 称号
@@ -73,9 +73,9 @@ export class TeamType extends BaseModel<TeamType> {
   // 所属主体
   unionMain?: CompanyInfoType;
   // 父级
-  parent?: TeamType;
+  parent?: TeamInfoType;
 
-  constructor(initState: Partial<TeamType> = {}) {
+  constructor(initState: Partial<TeamInfoType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }
