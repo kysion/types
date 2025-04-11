@@ -4,7 +4,7 @@ import { cloneDeep } from "lodash";
 
 export class ChannelInfoType extends BaseModel<ChannelInfoType> {
     // ID，可选
-    id: React.Key = 0;
+    id: number = 0;
     // 名称，可选
     name: string = "";
     // 描述，可选
@@ -12,9 +12,11 @@ export class ChannelInfoType extends BaseModel<ChannelInfoType> {
     // 平台标识符，可选
     identifier: string = "";
     // 所属主体，可选
-    unionMainId: React.Key = 0;
+    unionMainId: number = 0;
     // 平台网站URL，可选
     siteUrl: string = "";
+    // 平台LOGO，可选
+    logoPath: string = "";
     // 创建时间，可选
     createdAt: Dayjs | string | null = "";
     // 更新时间，可选
