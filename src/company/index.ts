@@ -3,7 +3,7 @@ import { BaseModel } from "../base";
 import { UserInfoType } from "../user";
 import { authStateSet, AuthStateSet } from "../license/enum";
 import { companyStateSet, CompanyStateSet } from "./enum";
-import { countryCodeSet, CountryCodeSet } from "../base/country";
+import { CountryCodeSet } from "../base/country";
 export * from './enum';
 
 export class CompanyInfoType extends BaseModel<CompanyInfoType> {

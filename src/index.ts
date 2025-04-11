@@ -10,6 +10,7 @@ export * from './common';
 export * from './delivery-company'
 export * from './employee';
 export * from './financial';
+export * from './industry';
 export * from './level'
 export * from './license';
 export * from './menu';
@@ -24,3 +25,4 @@ export * from './upload/idcard';
 export * from './user';
 export * from './channel';
 export * from './locales';
+export * from './industry';

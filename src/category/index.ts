@@ -1,21 +1,30 @@
 import { cloneDeep } from "lodash";
 import { BaseModel } from "../base";
+import { categoryStateSet, CategoryStateSet } from "./enum";
 
+export * from './enum';
+
+// 商品类别信息类型
 export class CategoryType extends BaseModel<CategoryType> {
-    // ID
-    id: React.Key = 0;
-    // 名称
+    // ID，ID值为0时则新增类别
+    id: number = 0;
+    // 类别名称
     name: string = "";
+    // 类别描述
+    description: string = "";
     // 父级ID
-    parentId: React.Key = 0;
-    // 分类图片
+    parentId: number = 0;
+    // 类别图片
     picturePath: string = "";
-    // 是否隐藏
-    hidden: number = 0;
-    // 顺序
+    // 排序
     sort: number = 0;
+    // 状态：0隐藏，1显示
+    hidden: CategoryStateSet = categoryStateSet.Visible;
     // 关联主体ID（保留字段）
-    unionMainId: React.Key = 0;
+    unionMainId: number = 0;
+
+    // 子级
+    children: CategoryType[] = [];
 
     constructor(initState: Partial<CategoryType> = {}) {
         super();
