@@ -4,15 +4,18 @@ export * from './auth';
 export * from './base'
 export * from './captcha';
 export * from './category';
-export * from './company';
+export * from './channel';
 export * from './comment';
 export * from './common';
+export * from './company';
 export * from './delivery-company'
 export * from './employee';
 export * from './financial';
+export * from './goods';
 export * from './industry';
 export * from './level'
 export * from './license';
+export * from './locales';
 export * from './menu';
 export * from './message';
 export * from './my';
@@ -23,6 +26,3 @@ export * from './setting';
 export * from './team';
 export * from './upload/idcard';
 export * from './user';
-export * from './channel';
-export * from './locales';
-export * from './industry';
