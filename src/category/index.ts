@@ -18,6 +18,8 @@ export class CategoryType extends BaseModel<CategoryType> {
     picturePath: string = "";
     // 排序
     sort: number = 0;
+    // 类型：1商品，2文章
+    type: number = 0;
     // 状态：0隐藏，1显示
     hidden: CategoryStateSet = categoryStateSet.Visible;
     // 关联主体ID（保留字段）
