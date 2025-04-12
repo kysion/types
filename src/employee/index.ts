@@ -10,7 +10,7 @@ export * from "./enum"
 /** 员工类，实现了IEmployee接口，用于创建和管理员工实例 */
 export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 员工编号，默认为空字符串
   no: string = '';
   // 头像链接，默认为空字符串
@@ -20,7 +20,7 @@ export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   // 手机号，默认为空字符串
   mobile: string = '';
   // 关联主体ID，默认为0
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 状态，默认为0
   state: EmployeeStateSet = employeeStateSet.UnActivated;
   // 最后活跃IP，默认为空字符串
@@ -28,15 +28,15 @@ export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   // 入职时间，默认为空字符串
   hiredAt: Dayjs | undefined | string = '';
   // 创建者ID，默认为0
-  createdBy: React.Key = 0;
+  createdBy: number = 0;
   // 创建时间，默认为空字符串
   createdAt?: string = '';
   // 最后更新者ID，默认为0
-  updatedBy: React.Key = 0;
+  updatedBy: number = 0;
   // 更新时间，默认为空字符串
   updatedAt?: string = '';
   // 删除者ID，默认为0
-  deletedBy: React.Key = 0;
+  deletedBy: number = 0;
   // 删除时间，默认为空字符串
   deletedAt: string = '';
   // 性别，默认为0

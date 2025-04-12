@@ -19,6 +19,7 @@ export * from './locales';
 export * from './menu';
 export * from './message';
 export * from './my';
+export * from './order';
 export * from './permission';
 export * from './position';
 export * from './role';
