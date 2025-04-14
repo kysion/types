@@ -1,6 +1,9 @@
 import { AccountBillDetailType as AccountDetailType, accountLimitStatusSet, AccountLimitStatusSet } from ".";
 import { BaseModel, enabledStateSet, EnabledStateSet, ValueOf } from "../base";
 import type { Dayjs } from 'dayjs';
+import { UserInfoType } from "../user";
+import { CompanyInfoType } from "../company";
+import { cloneDeep } from "lodash";
 
 // 账户类型图标类型
 type AccountTypeIcon = 'fluent-mdl2:all-currency' |
@@ -107,13 +110,13 @@ export const i18nAccountType = {
 // 财务账号
 export class AccountInfoType extends BaseModel<AccountInfoType> {
   // ID，可选
-  id: React.Key = 0;
+  id: number = 0;
   // 账户名称，可选
   name: string = "";
   // 关联资质 ID，大于 0 时必须保值与 union_user_id 关联得上，可选
-  unionLicenseId: React.Key = 0;
+  unionLicenseId: number = 0;
   // 关联用户 ID，可选
-  unionUserId: React.Key = 0;
+  unionUserId: number = 0;
   // 货币代码，可选
   currencyCode: string = "";
   // 是否启用：1 启用，0 禁用，可选
@@ -129,15 +132,15 @@ export class AccountInfoType extends BaseModel<AccountInfoType> {
   // 创建时间，可选
   createdAt: Dayjs | string | null = "";
   // 创建者 ID，可选
-  createdBy: React.Key = 0;
+  createdBy: number = 0;
   // 更新时间，可选
   updatedAt: Dayjs | string | null = "";
   // 更新者 ID，可选
-  updatedBy: React.Key = 0;
+  updatedBy: number = 0;
   // 删除时间，可选
   deletedAt: Dayjs | string | null = "";
   // 删除者 ID，可选
-  deletedBy: React.Key = 0;
+  deletedBy: number = 0;
   // 场景类型：0 不限、1 充电佣金收入，可选
   sceneType: number = 0;
   // 账户类型：1 系统账户、2 银行卡、3 支付宝、4 微信、5 云闪付、6 翼支付，可选
@@ -145,9 +148,24 @@ export class AccountInfoType extends BaseModel<AccountInfoType> {
   // 账户编号，例如银行卡号、支付宝账号、微信账号等对应账户类型的编号，可选
   accountNumber: string = "";
   // 关联主体 ID，与 union_license_id 中的 union_main_id 一致，可选
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 是否允许存在负余额: 0 禁止、1 允许，可选
   allowExceed: AllowNegativeBalanceSet = allowNegativeBalanceSet.Allowed;
   // 详情，可选
-  detail?: AccountDetailType
+  detail?: AccountDetailType;
+
+  constructor(initState: Partial<AccountInfoType> = {}) {
+    super();
+    Object.assign(this, cloneDeep(initState));
+  }
+}
+
+export class AccountInfoViewType extends AccountInfoType {
+  user?: UserInfoType | null;
+  unionMain?: CompanyInfoType | null;
+
+  constructor(initState: Partial<AccountInfoViewType> = {}) {
+    super(initState);
+    Object.assign(this, cloneDeep(initState));
+  }
 }

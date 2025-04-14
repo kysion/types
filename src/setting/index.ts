@@ -4,14 +4,14 @@ export class SettingType<T> {
   name: string = '';
   values: T | null = null;
   desc: string = '';
-  unionMainId: React.Key = 0;
-  userId: React.Key = 0;
+  unionMainId: number = 0;
+  userId: number = 0;
   createdAt: Date | string = '';
   updatedAt: Date | string = '';
 }
 
 export interface SemesterType {
-  semesterId: React.Key;
+  semesterId: number;
   semesterTitle?: string;
   semesterUpDown?: 1 | 2;
   beginDate: string | undefined;
@@ -23,7 +23,7 @@ export interface SemesterType {
 }
 
 export interface SemesterTableColumnType {
-  keyIndex: React.Key;
+  keyIndex: number;
   semester: string;
   semesterTitle: string;
   beginDate: string;

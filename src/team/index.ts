@@ -47,15 +47,15 @@ export const i18nInvite = {
 
 export class TeamInfoType extends BaseModel<TeamInfoType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 名称
   name: string = '';
   // 负责人
-  ownerEmployeeId: React.Key = 0;
+  ownerEmployeeId: number = 0;
   // 队长
-  captainEmployeeId: React.Key = 0;
+  captainEmployeeId: number = 0;
   // 父级ID
-  parentId: React.Key = 0;
+  parentId: number = 0;
   // 备注
   remark: string = '';
   // 类型：默认 0，保留字段

@@ -9,7 +9,7 @@ export * from './enum'
 // 发票抬头
 export class InvoiceInfoType extends BaseModel<InvoiceInfoType> {
   // 唯一标识
-  id: React.Key = 0;
+  id: number = 0;
   // 发票抬头名称
   name: string = '';
   // 纳税识别号
@@ -19,9 +19,9 @@ export class InvoiceInfoType extends BaseModel<InvoiceInfoType> {
   // 发票收件邮箱，限电子发票
   email: string = '';
   // 申请人 UserID
-  userId: React.Key = 0;
+  userId: number = 0;
   // 审核人 UserID
-  auditUserId: React.Key = 0;
+  auditUserId: number = 0;
   // 审核回复，仅审核不通过时才有值
   auditReplyMsg: string = '';
   // 审核时间
@@ -29,19 +29,19 @@ export class InvoiceInfoType extends BaseModel<InvoiceInfoType> {
   // 状态：0 待审核、1 已通过、-1 不通过
   state: InvoiceAuditStatusSet = invoiceAuditStatusSet.PendingAudit;
   // 主体 ID：运营商 ID、服务商 ID、商户 ID、消费者 ID
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 创建时间
   createdAt: Dayjs | string | null = '';
   // 创建人 ID
-  createdBy: React.Key = 0;
+  createdBy: number = 0;
   // 更新时间
   updatedAt: Dayjs | string | null = '';
   // 更新人 ID
-  updatedBy: React.Key = 0;
+  updatedBy: number = 0;
   // 删除时间
   deletedAt: Dayjs | string | null = '';
   // 删除人 ID
-  deletedBy: React.Key = 0;
+  deletedBy: number = 0;
 
   constructor(initState: Partial<InvoiceInfoType> = {}) {
     super();
@@ -51,7 +51,7 @@ export class InvoiceInfoType extends BaseModel<InvoiceInfoType> {
 
 export class ApplyInvoiceType extends BaseModel<ApplyInvoiceType> {
   // ID，可选
-  id: React.Key = "";
+  id: number = "";
   // 纳税识别号，可选
   taxNumber: string = "";
   // 纳税人名称，可选
@@ -75,7 +75,7 @@ export class ApplyInvoiceType extends BaseModel<ApplyInvoiceType> {
   // 出票类型：1 普通发票、2 增值税专用发票、3 专业发票，可选
   makeType: MakeInvoiceTypeSet = makeInvoiceTypeSet.Normal;
   // 出票人 UserID，如果是系统出票则默认 -1，可选
-  makeUserId: React.Key = 0;
+  makeUserId: number = 0;
   // 出票时间，可选
   makeAt: Dayjs | string | null = "";
   // 快递名称，限纸质发票，可选
@@ -83,44 +83,44 @@ export class ApplyInvoiceType extends BaseModel<ApplyInvoiceType> {
   // 快递编号，限纸质发票，可选
   courierNumber: string = "";
   // 发票抬头 ID，可选
-  fdInvoiceId: React.Key = 0;
+  fdInvoiceId: number = 0;
   // 审核者 UserID，可选
-  auditUserId: React.Key = 0;
+  auditUserId: number = 0;
   // 审核回复，仅审核不通过时才有值，可选
   auditReplyMsg: string = "";
   // 审核时间，可选
   auditAt: Dayjs | string | null = "";
   // 申请者用户 ID，可选
-  userId: React.Key = 0;
+  userId: number = 0;
   // 主体 ID：运营商 ID、服务商 ID、商户 ID、消费者 ID，可选
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 发票收件邮箱，限电子发票，可选
   email: string = "";
   // 创建时间
   createdAt: Dayjs | string | null = "";
   // 创建者 ID
-  createdBy: React.Key | null = null;
+  createdBy: number | null = null;
   // 更新时间
   updatedAt: Dayjs | string | null = "";
   // 更新者 ID
-  updatedBy: React.Key | null = null;
+  updatedBy: number | null = null;
   // 删除时间
   deletedAt: Dayjs | string | null = "";
   // 删除者 ID
-  deletedBy: React.Key | null = null;
+  deletedBy: number | null = null;
   // 所属（含义不明，根据实际情况可能需要修改），可选
   belongTo: number = 0;
 }
 
 export class MakeInvoiceDetailType extends BaseModel<MakeInvoiceDetailType> {
   // 发票详情 id，必需
-  invoiceDetailId: React.Key = 0;
+  invoiceDetailId: number = 0;
   // 出票类型，可选
   makeType: MakeInvoiceTypeSet = makeInvoiceTypeSet.Normal;
   // 发票类型，必需
   type: InvoiceTypeSet = invoiceTypeSet.Electronic;
   // 开票者 UserID，可选
-  makeUserId?: React.Key;
+  makeUserId?: number;
   // 快递名称，限纸质发票，可选
   courierName: string = "";
   // 快递编号，限纸质发票，可选

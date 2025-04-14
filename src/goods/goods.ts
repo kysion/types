@@ -8,16 +8,16 @@ import { BaseModel } from '../base';
 export * from './enum'
 
 export class GoodsInfoType extends BaseModel<GoodsInfoType> {
-  // ID，默认值为0，类型为React.Key
-  id: React.Key = 0;
+  // ID，默认值为0，类型为number
+  id: number = 0;
   // 编号，默认值为""
   number: string = "";
   // 标题，默认值为""
   title: string = "";
   // 分类，默认值为[]
   categoryIds: string[] = [];
-  // 所属主体，默认值为0，类型为React.Key
-  unionMainId: React.Key = 0;
+  // 所属主体，默认值为0，类型为number
+  unionMainId: number = 0;
   // 所属主体类型，默认值为0
   unionMainType: number = 0;
   // 虚拟销量，默认值为0
@@ -48,18 +48,18 @@ export class GoodsInfoType extends BaseModel<GoodsInfoType> {
   placeOfOrigin: string = "";
   // 更新时间，默认值为""，类型为Dayjs | string | null
   updatedAt: Dayjs | string | null = "";
-  // 更新者ID，默认值为0，类型为React.Key
-  updatedBy: React.Key = 0;
+  // 更新者ID，默认值为0，类型为number
+  updatedBy: number = 0;
   // 媒体资源，默认值为""
   mediaJson: string = "";
   // 创建时间，默认值为""，类型为Dayjs | string | null
   createdAt: Dayjs | string | null = "";
-  // 创建者ID，默认值为0，类型为React.Key
-  createdBy: React.Key = 0;
+  // 创建者ID，默认值为0，类型为number
+  createdBy: number = 0;
   // 删除时间，默认值为""，类型为Dayjs | string | null
   deletedAt: Dayjs | string | null = "";
-  // 删除者ID，默认值为0，类型为React.Key
-  deletedBy: React.Key = 0;
+  // 删除者ID，默认值为0，类型为number
+  deletedBy: number = 0;
   // 审核状态：0草稿，1待审核，2通过，4不通过，默认值为0
   auditState: GoodsAuditStateSet = goodsAuditStateSet.Draft;
   // 商品审核不通过原因，默认值为""

@@ -6,7 +6,7 @@ export class FileInfoType extends BaseModel<FileInfoType> {
   // 标题，可选
   title?: string;
   // id，必需
-  id: React.Key = 0;
+  id: number = 0;
   // 描述，可选
   desc?: string;
   // 图片地址，可选
@@ -24,7 +24,7 @@ export class FileInfoType extends BaseModel<FileInfoType> {
 
 export class CompanyLicenseType extends BaseModel<CompanyLicenseType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 身份证头像面照片
   idCardFrontPath: string = '';
   // 身份证国徽面照片
@@ -60,7 +60,7 @@ export class CompanyLicenseType extends BaseModel<CompanyLicenseType> {
   // 法人证照，如果法人不是自然人，则该项必填
   businessLicenseLegalPath: string = '';
   // 最新的审核记录ID
-  latestAuditLogId: React.Key = 0;
+  latestAuditLogId: number = 0;
   // 状态：0失效、1正常
   state: AuthStateSet = authStateSet.Invalid;
   // 认证类型

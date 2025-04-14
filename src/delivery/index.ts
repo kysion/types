@@ -1,9 +1,9 @@
 import cloneDeep from 'lodash/cloneDeep';
 import { BaseModel } from '../base';
 
-export class DeliveryCompanyType extends BaseModel<DeliveryCompanyType> {
-    // ID，默认值为0，类型为React.Key
-    id: React.Key = 0;
+export class DeliveryInfoType extends BaseModel<DeliveryInfoType> {
+    // ID，默认值为0，类型为number
+    id: number = 0;
     // 物流公司，默认值为""
     name: string = "";
     // LOGO，默认值为""
@@ -23,7 +23,7 @@ export class DeliveryCompanyType extends BaseModel<DeliveryCompanyType> {
     // 创建时间，默认值为""
     createdAt: string = "";
 
-    constructor(initState: Partial<DeliveryCompanyType> = {}) {
+    constructor(initState: Partial<DeliveryInfoType> = {}) {
         super();
         Object.assign(this, cloneDeep(initState));
     }

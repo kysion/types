@@ -3,8 +3,8 @@ import cloneDeep from 'lodash/cloneDeep';
 import { BaseModel } from '../base';
 
 export class SpecificationType extends BaseModel<SpecificationType> {
-  // ID，默认值为0，类型为React.Key
-  id: React.Key = 0;
+  // ID，默认值为0，类型为number
+  id: number = 0;
   // 名称，默认值为""
   name: string = "";
   // 编码，默认值为""
@@ -29,8 +29,8 @@ export class SpecificationType extends BaseModel<SpecificationType> {
   createdAt: string = "";
   // 更新时间，默认值为""
   updatedAt: string = "";
-  // 商品ID，默认值为0，类型为React.Key
-  goodsId: React.Key = 0;
+  // 商品ID，默认值为0，类型为number
+  goodsId: number = 0;
 
   constructor(initState: Partial<SpecificationType> = {}) {
     super();

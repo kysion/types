@@ -5,8 +5,8 @@ import { jumpTypeSet, JumpTypeSet, MenuTypeSet, menuTypeSet } from './enum';
 export * from './enum';
 
 export class MenuItemType extends BaseModel<MenuItemType> {
-  // ID，默认值为0，类型为React.Key
-  id: React.Key = 0;
+  // ID，默认值为0，类型为number
+  id: number = 0;
   // 路径，默认值为""
   path: string = "";
   // 名称，默认值为""
@@ -25,8 +25,8 @@ export class MenuItemType extends BaseModel<MenuItemType> {
   layout: string = "";
   // 组件，默认值为""
   component: string = "";
-  // 所属父级，默认值为0，类型为React.Key
-  parentId: React.Key | undefined = undefined;
+  // 所属父级，默认值为0，类型为number
+  parentId: number | undefined = undefined;
   // 排序，默认值为0
   sort: number | undefined = undefined;
   // 状态：0隐藏，1显示，默认值为0

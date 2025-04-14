@@ -85,7 +85,7 @@ export class BankCardType extends BaseModel<BankCardType> {
   // 银行卡开户名，必需
   holderName: string = "";
   // 银行卡所属用户 id，表示属于谁，可选
-  userId: React.Key = 0;
+  userId: number = 0;
   // 开户行，可选
   bankOfAccount: string = "";
   // 状态：0 禁用，1 正常，可选

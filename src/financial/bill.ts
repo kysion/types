@@ -5,7 +5,7 @@ import { incomeExpenseSet, IncomeExpenseSet, tradeStateSet, TradeStateSet, trade
 
 export class AccountBillDetailType extends BaseModel<AccountBillDetailType> {
   // ID，可选，和财务账号 id 保持一致
-  id: React.Key = 0;
+  id: number = 0;
   // 今日金额，可选
   todayAccountSum: number = 0;
   // 今日金额更新时间，可选
@@ -27,9 +27,9 @@ export class AccountBillDetailType extends BaseModel<AccountBillDetailType> {
   // 本年度金额更新时间，可选
   yearUpdatedAt: Dayjs | string | null = "";
   // 关联主体 id，可选
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 关联用户 id，可选
-  sysUserId: React.Key = 0;
+  sysUserId: number = 0;
   // 乐观锁所需数据版本字段，可选
   version: number = 0;
   // 场景类型：0 不限、1 其它，可选
@@ -41,22 +41,22 @@ export class AccountBillDetailType extends BaseModel<AccountBillDetailType> {
 }
 
 export class AccountBillType extends BaseModel<AccountBillType> {
-  // ID，默认值为0，类型为React.Key
-  id: React.Key = 0;
-  // 交易发起方UserID，如果是系统则固定为-1，默认值为0，类型为React.Key
-  fromUserId: React.Key = 0;
-  // 交易对象UserID，默认值为0，类型为React.Key
-  toUserId: React.Key = 0;
-  // 财务账户ID，默认值为0，类型为React.Key
-  fdAccountId: React.Key = 0;
+  // ID，默认值为0，类型为number
+  id: number = 0;
+  // 交易发起方UserID，如果是系统则固定为-1，默认值为0，类型为number
+  fromUserId: number = 0;
+  // 交易对象UserID，默认值为0，类型为number
+  toUserId: number = 0;
+  // 财务账户ID，默认值为0，类型为number
+  fdAccountId: number = 0;
   // 交易前账户余额，默认值为0
   beforeBalance: number = 0;
   // 交易金额，默认值为0
   amount: number = 0;
   // 交易后账户余额，默认值为0
   afterBalance: number = 0;
-  // 关联业务订单ID，默认值为0，类型为React.Key
-  unionOrderId: React.Key = 0;
+  // 关联业务订单ID，默认值为0，类型为number
+  unionOrderId: number = 0;
   // 收支类型：1收入，2支出，默认值为0
   inOutType: IncomeExpenseSet = incomeExpenseSet.Income;
   // 交易类型，1转账、2消费、4退款、8佣金、16保证金、32诚意金、64手续费/服务费、128提现、256充值、512营收，8192其它，默认值为0
@@ -71,8 +71,8 @@ export class AccountBillType extends BaseModel<AccountBillType> {
   deletedAt: string = "";
   // 创建时间，默认值为""
   createdAt: string = "";
-  // 创建者ID，默认值为0，类型为React.Key
-  createdBy: React.Key = 0;
+  // 创建者ID，默认值为0，类型为number
+  createdBy: number = 0;
 
   constructor(initState: Partial<AccountBillType> = {}) {
     super();

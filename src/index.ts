@@ -8,7 +8,7 @@ export * from './channel';
 export * from './comment';
 export * from './common';
 export * from './company';
-export * from './delivery-company'
+export * from './delivery';
 export * from './employee';
 export * from './financial';
 export * from './goods';
