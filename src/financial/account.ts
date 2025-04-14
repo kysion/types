@@ -1,4 +1,4 @@
-import { AccountBillDetailType as AccountDetailType, accountLimitStatusSet, AccountLimitStatusSet } from ".";
+import { FdBillsDetailType as AccountDetailType, accountLimitStatusSet, AccountLimitStatusSet } from ".";
 import { BaseModel, enabledStateSet, EnabledStateSet, ValueOf } from "../base";
 import type { Dayjs } from 'dayjs';
 import { UserInfoType } from "../user";

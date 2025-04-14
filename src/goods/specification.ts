@@ -1,4 +1,3 @@
-import type React from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import { BaseModel } from '../base';
 

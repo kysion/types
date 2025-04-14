@@ -1,6 +1,5 @@
 import { BaseModel } from "../base";
 import type { Dayjs } from 'dayjs';
-import type React from 'react';
 
 export class MemberLevelType extends BaseModel<MemberLevelType> {
   // ID，可选

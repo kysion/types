@@ -1,5 +1,4 @@
 import type { Dayjs } from 'dayjs';
-import type React from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import { goodsAuditStateSet, GoodsAuditStateSet, goodsSaleStateSet, GoodsSaleStateSet } from './enum';
 import { SpecificationType } from './specification';

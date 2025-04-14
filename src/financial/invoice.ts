@@ -1,13 +1,24 @@
 import { cloneDeep } from "lodash";
 import { BaseModel } from "../base";
 import type { Dayjs } from 'dayjs';
-import type React from 'react';
-import { invoiceAuditStatusSet, InvoiceAuditStatusSet, invoiceStateSet, InvoiceStateSet, invoiceTypeSet, InvoiceTypeSet, makeInvoiceTypeSet, MakeInvoiceTypeSet } from "./enum";
+
+import {
+  invoiceAuditStatusSet,
+  InvoiceAuditStatusSet,
+  invoiceStateSet,
+  InvoiceStateSet,
+  invoiceTypeSet,
+  InvoiceTypeSet,
+  makeInvoiceTypeSet,
+  MakeInvoiceTypeSet
+} from "./enum";
+import { UserInfoType } from "../user";
+import { CompanyInfoType } from "../company";
 
 export * from './enum'
 
 // 发票抬头
-export class InvoiceInfoType extends BaseModel<InvoiceInfoType> {
+export class FdInvoiceInfoType extends BaseModel<FdInvoiceInfoType> {
   // 唯一标识
   id: number = 0;
   // 发票抬头名称
@@ -43,15 +54,15 @@ export class InvoiceInfoType extends BaseModel<InvoiceInfoType> {
   // 删除人 ID
   deletedBy: number = 0;
 
-  constructor(initState: Partial<InvoiceInfoType> = {}) {
+  constructor(initState: Partial<FdInvoiceInfoType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }
 }
 
-export class ApplyInvoiceType extends BaseModel<ApplyInvoiceType> {
+export class FdApplyInvoiceType extends BaseModel<FdApplyInvoiceType> {
   // ID，可选
-  id: number = "";
+  id: number = 0;
   // 纳税识别号，可选
   taxNumber: string = "";
   // 纳税人名称，可选
@@ -110,9 +121,14 @@ export class ApplyInvoiceType extends BaseModel<ApplyInvoiceType> {
   deletedBy: number | null = null;
   // 所属（含义不明，根据实际情况可能需要修改），可选
   belongTo: number = 0;
+
+  constructor(initState: Partial<FdApplyInvoiceType> = {}) {
+    super();
+    Object.assign(this, cloneDeep(initState));
+  }
 }
 
-export class MakeInvoiceDetailType extends BaseModel<MakeInvoiceDetailType> {
+export class FdMakeInvoiceDetailType extends BaseModel<FdMakeInvoiceDetailType> {
   // 发票详情 id，必需
   invoiceDetailId: number = 0;
   // 出票类型，可选
@@ -127,4 +143,19 @@ export class MakeInvoiceDetailType extends BaseModel<MakeInvoiceDetailType> {
   courierNumber: string = "";
   // 发票收件邮箱，限电子发票，可选
   email: string = "";
+
+  constructor(initState: Partial<FdMakeInvoiceDetailType> = {}) {
+    super();
+    Object.assign(this, cloneDeep(initState));
+  }
+}
+
+export class FdInvoiceInfoViewType extends FdInvoiceInfoType {
+  user?: UserInfoType | null;
+  unionMain?: CompanyInfoType | null;
+
+  constructor(initState: Partial<FdInvoiceInfoViewType> = {}) {
+    super(initState);
+    Object.assign(this, cloneDeep(initState));
+  }
 }

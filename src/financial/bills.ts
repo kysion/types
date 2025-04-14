@@ -1,9 +1,10 @@
 import { cloneDeep } from "lodash";
 import { BaseModel } from "../base";
 import type { Dayjs } from 'dayjs';
-import { incomeExpenseSet, IncomeExpenseSet, tradeStateSet, TradeStateSet, tradeTypeSet, TradeTypeSet } from ".";
+import { AccountInfoType, incomeExpenseSet, IncomeExpenseSet, tradeStateSet, TradeStateSet, tradeTypeSet, TradeTypeSet } from ".";
+import { UserInfoType } from "../user";
 
-export class AccountBillDetailType extends BaseModel<AccountBillDetailType> {
+export class FdBillsDetailType extends BaseModel<FdBillsDetailType> {
   // ID，可选，和财务账号 id 保持一致
   id: number = 0;
   // 今日金额，可选
@@ -34,13 +35,13 @@ export class AccountBillDetailType extends BaseModel<AccountBillDetailType> {
   version: number = 0;
   // 场景类型：0 不限、1 其它，可选
   sceneType: number = 0;
-  constructor(initState: Partial<AccountBillDetailType> = {}) {
+  constructor(initState: Partial<FdBillsDetailType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }
 }
 
-export class AccountBillType extends BaseModel<AccountBillType> {
+export class FdBillsType extends BaseModel<FdBillsType> {
   // ID，默认值为0，类型为number
   id: number = 0;
   // 交易发起方UserID，如果是系统则固定为-1，默认值为0，类型为number
@@ -74,8 +75,14 @@ export class AccountBillType extends BaseModel<AccountBillType> {
   // 创建者ID，默认值为0，类型为number
   createdBy: number = 0;
 
-  constructor(initState: Partial<AccountBillType> = {}) {
+  constructor(initState: Partial<FdBillsType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }
+}
+
+export class FdBillsViewType extends FdBillsType {
+  fromUser?: UserInfoType | null;
+  toUser?: UserInfoType | null;
+  fdAccount?: AccountInfoType | null;
 }
