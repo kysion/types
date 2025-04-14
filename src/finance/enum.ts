@@ -112,7 +112,7 @@ export const InvoiceTypeMap = new Map<InvoiceTypeSet, InvoiceTypeSetType>(Invoic
 
 // 财务账号限制状态类型
 export type AccountLimitStatusType = {
-  state: AccountLimitStatusSet,
+  value: AccountLimitStatusSet,
   i18nLabel: string,
   color: AccountLimitStatusColor
 };
@@ -131,13 +131,13 @@ type AccountLimitStatusColor = 'green' | 'orange' | 'purple';
 
 // 财务账号限制状态数组
 export const AccountLimitStatusTypeArr: readonly AccountLimitStatusType[] = [
-  { state: accountLimitStatusSet.NoLimit, i18nLabel: 'kysion.common.enum.NoLimit', color: 'green' },
-  { state: accountLimitStatusSet.LimitExpenditure, i18nLabel: 'kysion.common.enum.LimitExpenditure', color: 'orange' },
-  { state: accountLimitStatusSet.LimitIncome, i18nLabel: 'kysion.common.enum.LimitIncome', color: 'purple' }
+  { value: accountLimitStatusSet.NoLimit, i18nLabel: 'kysion.common.enum.NoLimit', color: 'green' },
+  { value: accountLimitStatusSet.LimitExpenditure, i18nLabel: 'kysion.common.enum.LimitExpenditure', color: 'orange' },
+  { value: accountLimitStatusSet.LimitIncome, i18nLabel: 'kysion.common.enum.LimitIncome', color: 'purple' }
 ];
 
 // 财务账号限制状态映射
-export const AccountLimitStatusMap = new Map<AccountLimitStatusSet, AccountLimitStatusType>(AccountLimitStatusTypeArr.map(item => [item.state, item]));
+export const AccountLimitStatusMap = new Map<AccountLimitStatusSet, AccountLimitStatusType>(AccountLimitStatusTypeArr.map(item => [item.value, item]));
 
 /**
  * **************************************************

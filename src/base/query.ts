@@ -100,7 +100,7 @@ export class Query {
   filter: Filter[] = [];
   orderBy: Order[] = [];
   isExport?: boolean;
-  include?: string[] = [];
+  include?: string[] = undefined;
   /**
    * 创建一个新的 Response 对象。
    *

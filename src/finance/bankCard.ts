@@ -75,6 +75,7 @@ export const i18nBankCard = {
  */
 
 export class FdBankCardType extends BaseModel<FdBankCardType> {
+  id: number = 0;
   // 银行名称，必需
   bankName: string = "";
   // 银行卡类型，必需

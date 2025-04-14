@@ -10,7 +10,7 @@ export * from './common';
 export * from './company';
 export * from './delivery';
 export * from './employee';
-export * from './financial';
+export * from './finance';
 export * from './goods';
 export * from './industry';
 export * from './level'

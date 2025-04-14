@@ -86,7 +86,7 @@ export const AllowNegativeBalanceMap = new Map<AllowNegativeBalanceSet, AllowNeg
 
 export const i18nAccountType = {
   zh_CN: {
-    'kysion.common.enum.pay.SystemAccount': '系统账户',
+    'kysion.common.enum.pay.SystemAccount': '系统默认账户',
     'kysion.common.enum.pay.BankCard': '银行卡',
     'kysion.common.enum.pay.Alipay': '支付宝',
     'kysion.common.enum.pay.WePay': '微信支付',
@@ -96,7 +96,7 @@ export const i18nAccountType = {
     'kysion.common.enum.pay.Allowed': '允许'
   },
   en_US: {
-    'kysion.common.enum.pay.SystemAccount': 'System Account',
+    'kysion.common.enum.pay.SystemAccount': 'System Default Account',
     'kysion.common.enum.pay.BankCard': 'Bank Card',
     'kysion.common.enum.pay.Alipay': 'Alipay',
     'kysion.common.enum.pay.WePay': 'WePay',
@@ -141,7 +141,7 @@ export class AccountInfoType extends BaseModel<AccountInfoType> {
   deletedAt: Dayjs | string | null = "";
   // 删除者 ID，可选
   deletedBy: number = 0;
-  // 场景类型：0 不限、1 充电佣金收入，可选
+  // 场景类型：0 不限、1 佣金收入，可选
   sceneType: number = 0;
   // 账户类型：1 系统账户、2 银行卡、3 支付宝、4 微信、5 云闪付、6 翼支付，可选
   accountType: AccountTypeSet = accountTypeSet.SystemAccount;
@@ -163,6 +163,26 @@ export class AccountInfoType extends BaseModel<AccountInfoType> {
 export class AccountInfoViewType extends AccountInfoType {
   user?: UserInfoType | null;
   unionMain?: CompanyInfoType | null;
+  // 今日账户统计
+  todayAccountSum: number = 0;
+  // 今日账户统计更新时间
+  todayUpdatedAt: Dayjs | string | null = null;
+  // 本周账户统计
+  weekAccountSum: number = 0;
+  // 本周账户统计更新时间
+  weekUpdatedAt: Dayjs | string | null = null;
+  // 本月账户统计
+  monthAccountSum: number = 0;
+  // 本月账户统计更新时间
+  monthUpdatedAt: Dayjs | string | null = null;
+  // 本季度账户统计
+  quarterAccountSum: number = 0;
+  // 本季度账户统计更新时间
+  quarterUpdatedAt: Dayjs | string | null = null;
+  // 本年账户统计
+  yearAccountSum: number = 0;
+  // 本年账户统计更新时间
+  yearUpdatedAt: Dayjs | string | null = null;
 
   constructor(initState: Partial<AccountInfoViewType> = {}) {
     super(initState);
