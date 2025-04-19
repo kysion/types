@@ -111,6 +111,34 @@ export default {
     'kysion.common.enum.trade.Revenue': '营收',
     'kysion.common.enum.trade.Other': '其他',
 
+    // 充值方式
+    'kysion.common.enum.recharge.BankCard': '银行卡',
+    'kysion.common.enum.recharge.Alipay': '支付宝',
+    'kysion.common.enum.recharge.WeChatPay': '微信',
+    'kysion.common.enum.recharge.UnionPay': '云闪付',
+    'kysion.common.enum.recharge.ApplePay': 'Apple Pay',
+    'kysion.common.enum.recharge.PayPal': 'PayPal',
+    'kysion.common.enum.recharge.AmazonPay': '亚马逊支付',
+    'kysion.common.enum.recharge.Cash': '线下现金',
+    'kysion.common.enum.recharge.Dapp': '区块链钱包',
+    'kysion.common.enum.recharge.Other': '其他',
+
+    // 充值审核状态
+    'kysion.common.enum.recharge.PendingAudit': '待审核',
+    'kysion.common.enum.recharge.Approved': '审核通过',
+    'kysion.common.enum.recharge.Rejected': '审核不通过',
+    'kysion.common.enum.recharge.Reviewing': '审核中(人工复审)',
+    'kysion.common.enum.recharge.WaitingSupplementaryInfo': '补充资料待审核',
+
+    // 充值状态
+    'kysion.common.enum.recharge.Pending': '待处理',
+    'kysion.common.enum.recharge.Processing': '处理中',
+    'kysion.common.enum.recharge.Paid': '已支付',
+    'kysion.common.enum.recharge.PartialSuccess': '部分成功',
+    'kysion.common.enum.recharge.Failed': '失败',
+    'kysion.common.enum.recharge.Cancelled': '已取消',
+    'kysion.common.enum.recharge.WaitingConfirm': '待确认',
+
     // 权限相关 (permission/enum.ts)
     'kysion.common.enum.permission.API': 'API',
     'kysion.common.enum.permission.Menu': '菜单',

@@ -364,3 +364,192 @@ export const i18nFinancial = {
     'kysion.common.enum.finance.LimitIncome': 'Limit Income'
   }
 };
+
+// 充值方式类型
+export type RechargeMethodType = {
+  value: RechargeMethodSet,
+  i18nLabel: string,
+  color: RechargeMethodColor,
+  icon: string,
+};
+
+// 充值方式集合
+export const rechargeMethodSet = {
+  BankCard: 1,
+  Alipay: 2,
+  WeChatPay: 3,
+  UnionPay: 4,
+  ApplePay: 5,
+  PayPal: 6,
+  AmazonPay: 7,
+  Cash: 8,
+  Dapp: 9,
+  Other: 100
+} as const;
+
+export type RechargeMethodSet = ValueOf<typeof rechargeMethodSet>;
+
+// 充值方式颜色类型
+type RechargeMethodColor = "blue" | "blue-darken-2" | "green" | undefined | "gray" | "purple" | "black" | "red" | "cyan" | "indigo" | "orange";
+
+// 充值方式数组
+export const RechargeMethodTypeArr: readonly RechargeMethodType[] = [
+  { value: rechargeMethodSet.BankCard, i18nLabel: 'kysion.common.enum.recharge.BankCard', color: 'blue', icon: 'fluent:payment-24-filled' },
+  { value: rechargeMethodSet.Alipay, i18nLabel: 'kysion.common.enum.recharge.Alipay', color: 'blue-darken-2', icon: 'ion:logo-alipay' },
+  { value: rechargeMethodSet.WeChatPay, i18nLabel: 'kysion.common.enum.recharge.WeChatPay', color: 'green', icon: 'tdesign:logo-wechatpay-filled' },
+  { value: rechargeMethodSet.UnionPay, i18nLabel: 'kysion.common.enum.recharge.UnionPay', color: undefined, icon: 'logos:unionpay' },
+  { value: rechargeMethodSet.ApplePay, i18nLabel: 'kysion.common.enum.recharge.ApplePay', color: 'black', icon: 'fontisto:apple-pay' },
+  { value: rechargeMethodSet.PayPal, i18nLabel: 'kysion.common.enum.recharge.PayPal', color: 'indigo', icon: 'fa:cc-paypal' },
+  { value: rechargeMethodSet.AmazonPay, i18nLabel: 'kysion.common.enum.recharge.AmazonPay', color: 'orange', icon: 'cib:cc-amazon-pay' },
+  { value: rechargeMethodSet.Cash, i18nLabel: 'kysion.common.enum.recharge.Cash', color: 'gray', icon: 'hugeicons:payment-02' },
+  { value: rechargeMethodSet.Dapp, i18nLabel: 'kysion.common.enum.recharge.Dapp', color: 'purple', icon: 'icon-park-outline:blockchain' },
+  { value: rechargeMethodSet.Other, i18nLabel: 'kysion.common.enum.recharge.Other', color: 'cyan', icon: 'icon-park-outline:other' }
+];
+
+// 充值方式映射
+export const RechargeMethodMap = new Map<RechargeMethodSet, RechargeMethodType>(
+  RechargeMethodTypeArr.map(item => [item.value, item])
+);
+
+// i18n翻译
+export const i18nRechargeMethod = {
+  zh_CN: {
+    'kysion.common.enum.recharge.BankCard': '银行卡',
+    'kysion.common.enum.recharge.Alipay': '支付宝',
+    'kysion.common.enum.recharge.WeChatPay': '微信',
+    'kysion.common.enum.recharge.UnionPay': '云闪付',
+    'kysion.common.enum.recharge.ApplePay': 'Apple Pay',
+    'kysion.common.enum.recharge.PayPal': 'PayPal',
+    'kysion.common.enum.recharge.AmazonPay': '亚马逊支付',
+    'kysion.common.enum.recharge.Cash': '线下现金',
+    'kysion.common.enum.recharge.Dapp': '区块链钱包',
+    'kysion.common.enum.recharge.Other': '其他'
+  },
+  en_US: {
+    'kysion.common.enum.recharge.BankCard': 'Bank Card',
+    'kysion.common.enum.recharge.Alipay': 'Alipay',
+    'kysion.common.enum.recharge.WeChatPay': 'WeChat Pay',
+    'kysion.common.enum.recharge.UnionPay': 'Union Pay',
+    'kysion.common.enum.recharge.ApplePay': 'Apple Pay',
+    'kysion.common.enum.recharge.PayPal': 'PayPal',
+    'kysion.common.enum.recharge.AmazonPay': 'Amazon Pay',
+    'kysion.common.enum.recharge.Cash': 'Cash',
+    'kysion.common.enum.recharge.Dapp': 'Blockchain Wallet',
+    'kysion.common.enum.recharge.Other': 'Other'
+  }
+};
+
+// 充值状态类型
+export type RechargeStateType = {
+  value: RechargeStateSet,
+  i18nLabel: string,
+  color: RechargeStateColor
+};
+
+// 充值状态集合
+export const rechargeStateSet = {
+  Pending: 0,
+  Processing: 1,
+  Paid: 2,
+  PartialSuccess: 3,
+  Failed: 4,
+  Cancelled: 5,
+  WaitingConfirm: 6
+} as const;
+
+export type RechargeStateSet = ValueOf<typeof rechargeStateSet>;
+
+// 充值状态颜色类型
+type RechargeStateColor = 'orange' | 'yellow' | 'green' | 'blue' | 'red' | 'gray' | 'purple';
+
+// 充值状态数组
+export const RechargeStateTypeArr: readonly RechargeStateType[] = [
+  { value: rechargeStateSet.Pending, i18nLabel: 'kysion.common.enum.recharge.Pending', color: 'orange' },
+  { value: rechargeStateSet.Processing, i18nLabel: 'kysion.common.enum.recharge.Processing', color: 'yellow' },
+  { value: rechargeStateSet.Paid, i18nLabel: 'kysion.common.enum.recharge.Paid', color: 'green' },
+  { value: rechargeStateSet.PartialSuccess, i18nLabel: 'kysion.common.enum.recharge.PartialSuccess', color: 'blue' },
+  { value: rechargeStateSet.Failed, i18nLabel: 'kysion.common.enum.recharge.Failed', color: 'red' },
+  { value: rechargeStateSet.Cancelled, i18nLabel: 'kysion.common.enum.recharge.Cancelled', color: 'gray' },
+  { value: rechargeStateSet.WaitingConfirm, i18nLabel: 'kysion.common.enum.recharge.WaitingConfirm', color: 'purple' }
+];
+
+// 充值状态映射
+export const RechargeStateMap = new Map<RechargeStateSet, RechargeStateType>(
+  RechargeStateTypeArr.map(item => [item.value, item])
+);
+
+// i18n翻译
+export const i18nRechargeState = {
+  zh_CN: {
+    'kysion.common.enum.recharge.Pending': '待处理',
+    'kysion.common.enum.recharge.Processing': '处理中',
+    'kysion.common.enum.recharge.Paid': '已支付',
+    'kysion.common.enum.recharge.PartialSuccess': '部分成功',
+    'kysion.common.enum.recharge.Failed': '失败',
+    'kysion.common.enum.recharge.Cancelled': '已取消',
+    'kysion.common.enum.recharge.WaitingConfirm': '待确认'
+  },
+  en_US: {
+    'kysion.common.enum.recharge.Pending': 'Pending',
+    'kysion.common.enum.recharge.Processing': 'Processing',
+    'kysion.common.enum.recharge.Paid': 'Paid',
+    'kysion.common.enum.recharge.PartialSuccess': 'Partial Success',
+    'kysion.common.enum.recharge.Failed': 'Failed',
+    'kysion.common.enum.recharge.Cancelled': 'Cancelled',
+    'kysion.common.enum.recharge.WaitingConfirm': 'Waiting Confirmation'
+  }
+};
+
+// 充值审核状态类型
+export type RechargeAuditStateType = {
+  value: RechargeAuditStateSet,
+  i18nLabel: string,
+  color: RechargeAuditStateColor,
+  icon: string
+};
+
+// 充值审核状态集合
+export const rechargeAuditStateSet = {
+  PendingAudit: 0,
+  Approved: 1,
+  Rejected: 2,
+  Reviewing: 3,
+  WaitingSupplementaryInfo: 4
+} as const;
+
+export type RechargeAuditStateSet = ValueOf<typeof rechargeAuditStateSet>;
+
+// 充值审核状态颜色类型
+type RechargeAuditStateColor = 'gray' | 'green' | 'red' | 'yellow' | 'orange';
+
+// 充值审核状态数组
+export const RechargeAuditStateTypeArr: readonly RechargeAuditStateType[] = [
+  { value: rechargeAuditStateSet.PendingAudit, i18nLabel: 'kysion.common.enum.recharge.PendingAudit', color: 'gray', icon: 'material-symbols:pending-actions-rounded' },
+  { value: rechargeAuditStateSet.Approved, i18nLabel: 'kysion.common.enum.recharge.Approved', color: 'green', icon: 'material-symbols:check-circle-outline-rounded' },
+  { value: rechargeAuditStateSet.Rejected, i18nLabel: 'kysion.common.enum.recharge.Rejected', color: 'red', icon: 'material-symbols:cancel-outline-rounded' },
+  { value: rechargeAuditStateSet.Reviewing, i18nLabel: 'kysion.common.enum.recharge.Reviewing', color: 'yellow', icon: 'material-symbols:rate-review-outline-rounded' },
+  { value: rechargeAuditStateSet.WaitingSupplementaryInfo, i18nLabel: 'kysion.common.enum.recharge.WaitingSupplementaryInfo', color: 'orange', icon: 'material-symbols:info-outline-rounded' }
+];
+
+// 充值审核状态映射
+export const RechargeAuditStateMap = new Map<RechargeAuditStateSet, RechargeAuditStateType>(
+  RechargeAuditStateTypeArr.map(item => [item.value, item])
+);
+
+// i18n翻译
+export const i18nRechargeAuditState = {
+  zh_CN: {
+    'kysion.common.enum.recharge.PendingAudit': '待审核',
+    'kysion.common.enum.recharge.Approved': '审核通过',
+    'kysion.common.enum.recharge.Rejected': '审核不通过',
+    'kysion.common.enum.recharge.Reviewing': '审核中(人工复审)',
+    'kysion.common.enum.recharge.WaitingSupplementaryInfo': '补充资料待审核'
+  },
+  en_US: {
+    'kysion.common.enum.recharge.PendingAudit': 'Pending Audit',
+    'kysion.common.enum.recharge.Approved': 'Approved',
+    'kysion.common.enum.recharge.Rejected': 'Rejected',
+    'kysion.common.enum.recharge.Reviewing': 'Under Review',
+    'kysion.common.enum.recharge.WaitingSupplementaryInfo': 'Waiting for Supplementary Information'
+  }
+};

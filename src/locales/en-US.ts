@@ -111,6 +111,34 @@ export default {
     'kysion.common.enum.trade.Revenue': 'Revenue',
     'kysion.common.enum.trade.Other': 'Other',
 
+    // Recharge type
+    'kysion.common.enum.recharge.BankCard': 'Bank Card',
+    'kysion.common.enum.recharge.Alipay': 'Alipay',
+    'kysion.common.enum.recharge.WeChatPay': 'WeChat Pay',
+    'kysion.common.enum.recharge.UnionPay': 'Union Pay',
+    'kysion.common.enum.recharge.ApplePay': 'Apple Pay',
+    'kysion.common.enum.recharge.PayPal': 'PayPal',
+    'kysion.common.enum.recharge.AmazonPay': 'Amazon Pay',
+    'kysion.common.enum.recharge.Cash': 'Cash',
+    'kysion.common.enum.recharge.Dapp': 'Blockchain Wallet',
+    'kysion.common.enum.recharge.Other': 'Other',
+
+    // Recharge audit state
+    'kysion.common.enum.recharge.PendingAudit': 'Pending Audit',
+    'kysion.common.enum.recharge.Approved': 'Approved',
+    'kysion.common.enum.recharge.Rejected': 'Rejected',
+    'kysion.common.enum.recharge.Reviewing': 'Under Review',
+    'kysion.common.enum.recharge.WaitingSupplementaryInfo': 'Waiting for Supplementary Information',
+
+    // Recharge state
+    'kysion.common.enum.recharge.Pending': 'Pending',
+    'kysion.common.enum.recharge.Processing': 'Processing',
+    'kysion.common.enum.recharge.Paid': 'Paid',
+    'kysion.common.enum.recharge.PartialSuccess': 'Partial Success',
+    'kysion.common.enum.recharge.Failed': 'Failed',
+    'kysion.common.enum.recharge.Cancelled': 'Cancelled',
+    'kysion.common.enum.recharge.WaitingConfirm': 'Waiting Confirmation',
+
     // Permission related (permission/enum.ts)
     'kysion.common.enum.permission.API': 'API',
     'kysion.common.enum.permission.Menu': 'Menu',
