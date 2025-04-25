@@ -139,6 +139,20 @@ export const AccountLimitStatusTypeArr: readonly AccountLimitStatusType[] = [
 // 财务账号限制状态映射
 export const AccountLimitStatusMap = new Map<AccountLimitStatusSet, AccountLimitStatusType>(AccountLimitStatusTypeArr.map(item => [item.value, item]));
 
+// 财务账号限制状态 i18n 翻译
+export const i18nAccountLimitStatus = {
+  zh_CN: {
+    'kysion.common.enum.NoLimit': '不限制',
+    'kysion.common.enum.LimitExpenditure': '限制支付',
+    'kysion.common.enum.LimitIncome': '限制收款'
+  },
+  en_US: {
+    'kysion.common.enum.NoLimit': 'No Limit',
+    'kysion.common.enum.LimitExpenditure': 'Limit Expenditure',
+    'kysion.common.enum.LimitIncome': 'Limit Income'
+  }
+};
+
 /**
  * **************************************************
  */
