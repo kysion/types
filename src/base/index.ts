@@ -5,3 +5,5 @@ export * from './records';
 export * from './enum';
 export * from './response';
 export * from './common';
+
+export * from './enum/index';

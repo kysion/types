@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
-import { BaseModel } from '../base';
-import { RechargeAuditStateSet, rechargeAuditStateSet, RechargeMethodSet, rechargeMethodSet, RechargeStateSet, rechargeStateSet } from './enum';
+import { AuditStateSet, auditStateSet, BaseModel } from '../base';
+import { RechargeMethodSet, rechargeMethodSet, RechargeStateSet, rechargeStateSet } from './enum';
 
 export class RechargeInfoType extends BaseModel<RechargeInfoType> {
     // 唯一标识每一条充值记录
@@ -34,7 +34,7 @@ export class RechargeInfoType extends BaseModel<RechargeInfoType> {
     state: RechargeStateSet = rechargeStateSet.Pending;
 
     // 审核状态：0-待审核；1-审核通过；2-审核不通过；3-审核中（人工复审）；4-补充资料待审核
-    auditState: RechargeAuditStateSet = rechargeAuditStateSet.PendingAudit;
+    auditState: AuditStateSet = auditStateSet.PendingAudit;
 
     // 审核意见，审核人员填写审核通过或不通过的原因等
     auditReply: string = "";
@@ -68,6 +68,9 @@ export class RechargeInfoType extends BaseModel<RechargeInfoType> {
 
     // 公司类型
     companyType: number = 0;
+
+    // 审核ID
+    auditId: number = 0;
 
     constructor(initState: Partial<RechargeInfoType> = {}) {
         super();
