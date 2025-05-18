@@ -1,5 +1,6 @@
 export * from './account'
 export * from './currency'
 export * from './bankCard'
-export * from './bill'
+export * from './bills'
 export * from './invoice'
+export * from './recharge'

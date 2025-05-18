@@ -1,9 +1,9 @@
 import { cloneDeep } from "lodash";
 import { BaseModel } from "../base";
 
-export class RoleType extends BaseModel<RoleType> {
+export class RoleInfoType extends BaseModel<RoleInfoType> {
   // 角色ID
-  id: React.Key = 0;
+  id: number = 0;
   // 名称
   name: string = '';
   // 描述
@@ -15,9 +15,9 @@ export class RoleType extends BaseModel<RoleType> {
   // 创建时间
   createdAt: string | null = null;
   // 主体ID
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
 
-  constructor(initState: Partial<RoleType> = {}) {
+  constructor(initState: Partial<RoleInfoType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }

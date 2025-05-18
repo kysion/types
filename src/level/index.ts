@@ -1,10 +1,9 @@
 import { BaseModel } from "../base";
 import type { Dayjs } from 'dayjs';
-import type React from 'react';
 
 export class MemberLevelType extends BaseModel<MemberLevelType> {
   // ID，可选
-  id: React.Key = 0;
+  id: number = 0;
   // 名称，可选
   name: string = "";
   // 描述，可选
@@ -16,7 +15,7 @@ export class MemberLevelType extends BaseModel<MemberLevelType> {
   // 更新时间，可选
   updatedAt: Dayjs | string | null = "";
   // 创建者 ID，可选
-  createdBy: React.Key = 0;
+  createdBy: number = 0;
   // 关联主体 ID，可选
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
 }

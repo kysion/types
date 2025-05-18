@@ -9,7 +9,7 @@ export type EmployeeStateType = {
 export const employeeStateSet = {
   HaveResigned: -1,
   UnActivated: 0,
-  Staffed: 1
+  OnTheJob: 1,
 } as const;
 
 export type EmployeeStateSet = ValueOf<typeof employeeStateSet>;
@@ -19,7 +19,7 @@ type EmployeeStateColor = 'gray' | 'orange' | 'green';
 export const EmployeeStateArr: readonly EmployeeStateType[] = [
   { value: employeeStateSet.HaveResigned, i18nLabel: 'kysion.employee.column.state.leave', color: 'gray' },
   { value: employeeStateSet.UnActivated, i18nLabel: 'kysion.employee.column.state.UnActivated', color: 'orange' },
-  { value: employeeStateSet.Staffed, i18nLabel: 'kysion.employee.column.state.onTheJob', color: 'green' }
+  { value: employeeStateSet.OnTheJob, i18nLabel: 'kysion.employee.column.state.onTheJob', color: 'green' },
 ];
 
 export const EmployeeStateMap = new Map<EmployeeStateSet, EmployeeStateType>(EmployeeStateArr.map(item => [item.value, item]));

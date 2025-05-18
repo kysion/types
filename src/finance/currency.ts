@@ -1,7 +1,9 @@
 import cloneDeep from 'lodash/cloneDeep';
 import { BaseModel } from '../base';
 
-export class CurrencyType extends BaseModel<CurrencyType> {
+export class CurrencyInfoType extends BaseModel<CurrencyInfoType> {
+    // 唯一标识每一条币种记录
+    id: number = 0;
     // 国家编码，默认值为""
     code: string = "";
     // 国家英文名称，默认值为""
@@ -23,7 +25,7 @@ export class CurrencyType extends BaseModel<CurrencyType> {
     // 货币汇率，本币为人民币，默认值为0
     currencyRate: number = 0;
 
-    constructor(initState: Partial<CurrencyType> = {}) {
+    constructor(initState: Partial<CurrencyInfoType> = {}) {
         super();
         Object.assign(this, cloneDeep(initState));
     }

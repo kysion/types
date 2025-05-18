@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash';
-import { BaseModel, CompanyType, EmployeeType, ValueOf } from '..';
+import { BaseModel, CompanyInfoType, EmployeeInfoType, ValueOf } from '..';
 import { Dayjs } from 'dayjs';
 
 // 邀请码类型类型
@@ -45,37 +45,37 @@ export const i18nInvite = {
 };
 
 
-export class TeamType extends BaseModel<TeamType> {
+export class TeamInfoType extends BaseModel<TeamInfoType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 名称
   name: string = '';
   // 负责人
-  ownerEmployeeId: React.Key = 0;
+  ownerEmployeeId: number = 0;
   // 队长
-  captainEmployeeId: React.Key = 0;
+  captainEmployeeId: number = 0;
   // 父级ID
-  parentId: React.Key = 0;
+  parentId: number = 0;
   // 备注
   remark: string = '';
   // 类型：默认 0，保留字段
   type: number = 0;
-  // 头像
-  avatar: string = '';
+  // LogoId
+  logoId: string = '';
   // 口号
   slogan: string = '';
   // 称号
   title: string = '';
   // 负责人
-  owner?: EmployeeType;
+  owner?: EmployeeInfoType;
   // 队长
-  captain?: EmployeeType;
+  captain?: EmployeeInfoType;
   // 所属主体
-  unionMain?: CompanyType;
+  unionMain?: CompanyInfoType;
   // 父级
-  parent?: TeamType;
+  parent?: TeamInfoType;
 
-  constructor(initState: Partial<TeamType> = {}) {
+  constructor(initState: Partial<TeamInfoType> = {}) {
     super();
     Object.assign(this, cloneDeep(initState));
   }

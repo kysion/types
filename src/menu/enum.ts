@@ -10,7 +10,6 @@ export type MenuType = {
 export const menuTypeSet = {
     Directory: 0,
     Menu: 1,
-    Button: 2
 } as const;
 
 export type MenuTypeSet = ValueOf<typeof menuTypeSet>;
@@ -19,7 +18,6 @@ export type MenuTypeSet = ValueOf<typeof menuTypeSet>;
 export const TypeTypeArr: readonly MenuType[] = [
     { value: menuTypeSet.Directory, i18nLabel: 'kysion.common.enum.Directory' },
     { value: menuTypeSet.Menu, i18nLabel: 'kysion.common.enum.Menu' },
-    { value: menuTypeSet.Button, i18nLabel: 'kysion.common.enum.Button' }
 ];
 
 // 类型映射
@@ -29,12 +27,10 @@ export const i18nMenuType = {
     zh_CN: {
         'kysion.common.enum.Directory': '目录',
         'kysion.common.enum.Menu': '菜单',
-        'kysion.common.enum.Button': '功能/按钮'
     },
     en_US: {
         'kysion.common.enum.Directory': 'Directory',
         'kysion.common.enum.Menu': 'Menu',
-        'kysion.common.enum.Button': 'Function/Button'
     }
 };
 

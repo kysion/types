@@ -37,6 +37,14 @@ export enum WhereSet {
   Like = 'like'
 }
 
+export enum ModifierSet {
+  Is = 'is',
+  IsNot = 'is not',
+  Not = 'not'
+}
+
+export type ModifierType = ModifierSet | 'is' | 'is not' | 'not';
+
 export const WhereMap = {
   [WhereSet.Equal]: 'kysion.query.Equal',
   [WhereSet.GreaterThan]: 'kysion.query.GreaterThan',
@@ -57,7 +65,8 @@ export class Filter {
   isOrWhere?: boolean;
   value: any = null;
   isNullValue?: boolean;
-  modifier?: 'is' | 'is not' | 'not';
+  modifier?: ModifierType;
+  children?: Filter[];
 
   /**
    * 创建一个新的 Response 对象。
@@ -91,7 +100,7 @@ export class Query {
   filter: Filter[] = [];
   orderBy: Order[] = [];
   isExport?: boolean;
-  include?: string[] = [];
+  include?: string[] = undefined;
   /**
    * 创建一个新的 Response 对象。
    *

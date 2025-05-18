@@ -1,13 +1,15 @@
 import { cloneDeep } from "lodash";
 import { BaseModel } from "../base";
-import { UserInfoType } from "../user";
+import { UserInfoType, userTypeSet, UserTypeSet } from "../user";
 import { authStateSet, AuthStateSet } from "../license/enum";
-
+import { companyStateSet, CompanyStateSet } from "./enum";
+import { CountryCodeSet } from "../base/country";
+import { CompanyLicenseType, EmployeeInfoType, TeamInfoType } from "..";
 export * from './enum';
 
-export class CompanyType extends BaseModel<CompanyType> {
+export class CompanyInfoType extends BaseModel<CompanyInfoType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 名称
   name: string = '';
   // 商务联系人
@@ -15,33 +17,33 @@ export class CompanyType extends BaseModel<CompanyType> {
   // 商务联系电话
   contactMobile: string = '';
   // 管理员ID
-  userId: React.Key = 0;
+  userId: number = 0;
   // 状态：0未启用，1正常
-  state: number = 0;
+  state: CompanyStateSet = companyStateSet.Disabled;
   // 备注
   remark: string = '';
   // 创建者
-  createdBy: React.Key = 0;
+  createdBy: number = 0;
   // 创建时间
   createdAt: string = '';
   // 更新者
-  updatedBy: React.Key = 0;
+  updatedBy: number = 0;
   // 更新时间
   updatedAt: string = '';
   // 删除者
-  deletedBy: React.Key = 0;
+  deletedBy: number = 0;
   // 删除时间
   deletedAt: string = '';
   // 父级ID
-  parentId: React.Key = 0;
+  parentId: number = 0;
   // 地址
   address: string = '';
   // 主体资质id
-  licenseId: React.Key = 0;
+  licenseId: number = 0;
   // 主体状态,和主体资质状态保持一致
-  licenseState: AuthStateSet = authStateSet.Invalid;
+  licenseState: AuthStateSet = authStateSet.UnVerified;
   // 所属国家编码
-  countryCode: string = '';
+  countryCode: CountryCodeSet | '' = '';
   // 所属地区
   region: string = '';
   // 返回数据(业务接口定义具体数据结构)
@@ -49,12 +51,24 @@ export class CompanyType extends BaseModel<CompanyType> {
   // 综合服务分
   score: number = 0;
   // LOGO
-  logoId: React.Key = 0;
-  // 图文媒体文件
-  mediaJson: string = '';
+  logoId: number = 0;
 
-  constructor(initState: Partial<CompanyType> = {}) {
+  constructor(initState: Partial<CompanyInfoType> = {}) {
     super();
+    Object.assign(this, cloneDeep(initState));
+  }
+}
+
+// 公司信息视图类型
+export class CompanyInfoViewType extends CompanyInfoType {
+  userType: UserTypeSet = userTypeSet.Anonymous;
+  teamList: TeamInfoType[] = [];
+  license: CompanyLicenseType | null = null;
+  employee: EmployeeInfoType | null = null;
+  user: UserInfoType | null = null;
+
+  constructor(initState: Partial<CompanyInfoViewType> = {}) {
+    super(initState);
     Object.assign(this, cloneDeep(initState));
   }
 }

@@ -2,8 +2,8 @@ import cloneDeep from 'lodash/cloneDeep';
 import { BaseModel } from '../base';
 
 export class MessageType extends BaseModel<MessageType> {
-    // ID，默认值为 0，类型为React.Key
-    id: React.Key = 0;
+    // ID，默认值为 0，类型为number
+    id: number = 0;
     // 标题，默认值为 ""
     title: string = "";
     // 摘要，默认值为 ""
@@ -18,8 +18,8 @@ export class MessageType extends BaseModel<MessageType> {
     toUserIds: string = "";
     // 接收者类型用户类型，和UserType保持一致，默认值为 0
     toUserType: number = 0;
-    // 发送者ID，为-1代表系统消息，默认值为 0，类型为React.Key
-    fromUserId: React.Key = 0;
+    // 发送者ID，为-1代表系统消息，默认值为 0，类型为number
+    fromUserId: number = 0;
     // 发送者类型，默认值为 0
     fromUserType: number = 0;
     // 发送时间，默认值为 ""

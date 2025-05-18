@@ -7,13 +7,13 @@ export * from './enum'
 // 审核
 export class AuditType extends BaseModel<AuditType> {
   // 审核ID
-  id: React.Key = 0;
+  id: number = 0;
   // 审核状态
   state: AuditStateSet = auditStateSet.Pending;
   // 审核类型
   reply: string = '';
   // 审核内容
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 审核业务类型
   category: AuditCategorySet = auditCategorySet.BusinessScene;
   // 审核数据
@@ -27,11 +27,11 @@ export class AuditType extends BaseModel<AuditType> {
   // 创建时间
   createdAt: string = '';
   // 审核操作人员
-  auditUserId: React.Key = 0;
+  auditUserId: number = 0;
   // 数据标识
   dataIdentifier: string = '';
   // 用户ID
-  userId: React.Key = 0;
+  userId: number = 0;
   // 概述
   summary: string = '';
   // 审核分组

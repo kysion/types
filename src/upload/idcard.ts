@@ -101,7 +101,7 @@ export class OrcIDCardDateSideType extends BaseModel<OrcIDCardDateSideType> {
 // 身份证信息类
 export class IDCardInfo extends BaseModel<IDCardInfo> {
   // 自增ID
-  id: React.Key = 0;
+  id: number = 0;
   // 文件名称
   name: string = '';
   // 存储路径
@@ -115,9 +115,9 @@ export class IDCardInfo extends BaseModel<IDCardInfo> {
   // 文件分类
   category: string = '';
   // 用户ID
-  userId: React.Key = 0;
+  userId: number = 0;
   // 关联主体ID
-  unionMainId: React.Key = 0;
+  unionMainId: number = 0;
   // 创建时间
   createdAt: string | null = '';
   // 更新时间

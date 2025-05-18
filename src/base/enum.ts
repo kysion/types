@@ -21,7 +21,7 @@ type SexIcon = 'mdi:gender-male' | 'mdi:gender-female' | 'mdi:gender-male-female
 type SexColor = 'blue' | 'red' | 'green';
 
 export const SexTypeArr: readonly SexType[] = [
-  { value: sexSet.Unknown, i18nLabel: 'kysion.common.enum.Unknown', icon: 'mdi:gender-male-female', color: 'green' },
+  { value: sexSet.Unknown, i18nLabel: 'kysion.common.enum.genderUnknown', icon: 'mdi:gender-male-female', color: 'green' },
   { value: sexSet.Male, i18nLabel: 'kysion.common.enum.Male', icon: 'mdi:gender-male', color: 'blue' },
   { value: sexSet.Female, i18nLabel: 'kysion.common.enum.Female', icon: 'mdi:gender-female', color: 'red' }
 ];
@@ -95,7 +95,7 @@ export const YesNoStateMap = new Map<YesNoStateSet, YesNoStateSetType>(YesNoStat
 
 export const i18n = {
   zh_CN: {
-    'kysion.common.enum.Unknown': '未知',
+    'kysion.common.enum.genderUnknown': '未设置',
     'kysion.common.enum.Male': '男',
     'kysion.common.enum.Female': '女',
     'kysion.common.enum.Enabled': '启用',
@@ -104,7 +104,7 @@ export const i18n = {
     'kysion.common.enum.No': '否'
   },
   en_US: {
-    'kysion.common.enum.Unknown': 'Unknown',
+    'kysion.common.enum.genderUnknown': 'Unknown',
     'kysion.common.enum.Male': 'Male',
     'kysion.common.enum.Female': 'Female',
     'kysion.common.enum.Enabled': 'Enabled',

@@ -3,11 +3,12 @@ import { BaseModel } from '../base';
 import { Dayjs } from 'dayjs';
 
 export * from './enum'
+export * from './props'
 
 // 用户信息类，用于封装用户信息对象
 export class UserInfoType extends BaseModel<UserInfoType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 用户名
   username: string = '';
   // 密码
@@ -41,7 +42,7 @@ export class UserInfoType extends BaseModel<UserInfoType> {
 
 export class UserDetailType extends BaseModel<UserDetailType> {
   // 用户ID
-  id: React.Key = 0;
+  id: number = 0;
   // 用户真实姓名
   realname: string = '';
   // 联合主账号名称

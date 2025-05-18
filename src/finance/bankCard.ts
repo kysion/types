@@ -1,6 +1,7 @@
 import { BaseModel, ValueOf } from "../base";
 import type { Dayjs } from 'dayjs';
-import type React from 'react';
+import { UserInfoType } from "../user";
+import { cloneDeep } from "lodash";
 
 // 银行卡类型枚举类型
 export type BankCardTypeSetType = {
@@ -73,7 +74,8 @@ export const i18nBankCard = {
  * *******************
  */
 
-export class BankCardType extends BaseModel<BankCardType> {
+export class FdBankCardType extends BaseModel<FdBankCardType> {
+  id: number = 0;
   // 银行名称，必需
   bankName: string = "";
   // 银行卡类型，必需
@@ -85,11 +87,25 @@ export class BankCardType extends BaseModel<BankCardType> {
   // 银行卡开户名，必需
   holderName: string = "";
   // 银行卡所属用户 id，表示属于谁，可选
-  userId: React.Key = 0;
+  userId: number = 0;
   // 开户行，可选
   bankOfAccount: string = "";
   // 状态：0 禁用，1 正常，可选
   state: BankCardStatusSet = bankCardStatusSet.Normal;
   // 备注信息，可选
   remark: string = "";
+
+  constructor(initState: Partial<FdBankCardType> = {}) {
+    super();
+    Object.assign(this, cloneDeep(initState));
+  }
+}
+
+export class FdBankCardInfoViewType extends FdBankCardType {
+  user?: UserInfoType | null;
+
+  constructor(initState: Partial<FdBankCardInfoViewType> = {}) {
+    super(initState);
+    Object.assign(this, cloneDeep(initState));
+  }
 }

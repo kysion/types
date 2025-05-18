@@ -4,7 +4,7 @@ import { authStateSet, AuthStateSet } from './enum';
 
 export class PersonalLicenseType extends BaseModel<PersonalLicenseType> {
   // ID
-  id: React.Key = 0;
+  id: number = 0;
   // 身份证头像面照片
   idcardFrontPath: string = '';
   // 身份证国徽面照片
@@ -40,7 +40,7 @@ export class PersonalLicenseType extends BaseModel<PersonalLicenseType> {
   // 备注信息
   remark: string = '';
   // 最新的审核记录ID
-  latestAuditLogId: React.Key = 0;
+  latestAuditLogId: number = 0;
   // 概述
   summary: string = '';
   constructor(initState: Partial<PersonalLicenseType> = {}) {
