@@ -1,6 +1,6 @@
 import { cloneDeep } from 'lodash';
-import { BaseModel } from '../base';
-import { auditCategorySet, AuditCategorySet, auditStateSet, AuditStateSet } from './enum';
+import { AuditStateSet, auditStateSet, BaseModel } from '../base';
+import { auditCategorySet, AuditCategorySet } from './enum';
 
 export * from './enum'
 
@@ -9,7 +9,7 @@ export class AuditType extends BaseModel<AuditType> {
   // 审核ID
   id: number = 0;
   // 审核状态
-  state: AuditStateSet = auditStateSet.Pending;
+  state: AuditStateSet = auditStateSet.PendingAudit;
   // 审核类型
   reply: string = '';
   // 审核内容
