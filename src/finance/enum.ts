@@ -268,12 +268,15 @@ export const i18nTrade = {
  */
 // 交易状态类型
 export type TradeStateType = {
-  value: TradeStateSet,
-  i18nLabel: string,
-  color: TradeStatusColor
+  value: TradeStateSet;
+  i18nLabel: string;
+  color: TradeStatusColor;
+  isFinal: boolean;       // 是否为最终状态
+  canRefund: boolean;     // 是否可以退款
+  canFreeze: boolean;     // 是否可以冻结
 };
 
-// 交易状态集合
+// 交易状态集合（添加新状态）
 export const tradeStateSet = {
   PendingPayment: 1,
   Paying: 2,
@@ -283,30 +286,41 @@ export const tradeStateSet = {
   Refunding: 32,
   Refunded: 64,
   Timeout: 128,
-  Closed: 256
+  Closed: 256,
+  Frozen: 512,            // 新增：已冻结
+  Unfrozen: 1024,         // 新增：已解冻
+  UnfreezeFailed: 2048,   // 新增：解冻失败
 } as const;
 
 export type TradeStateSet = ValueOf<typeof tradeStateSet>;
 
 // 交易状态颜色类型
-type TradeStatusColor = 'orange' | 'yellow' | 'green' | 'red' | 'blue' | 'purple' | 'cyan' | 'gray' | 'black';
+export type TradeStatusColor =
+  'orange' | 'yellow' | 'green' | 'red' | 'blue' |
+  'purple' | 'cyan' | 'gray' | 'black' | 'indigo'; // 新增颜色
 
-// 交易状态数组
+// 交易状态数组（添加新状态配置）
 export const TradeStateSetArr: readonly TradeStateType[] = [
-  { value: tradeStateSet.PendingPayment, i18nLabel: 'kysion.common.enum.PendingPayment', color: 'orange' },
-  { value: tradeStateSet.Paying, i18nLabel: 'kysion.common.enum.Paying', color: 'yellow' },
-  { value: tradeStateSet.Paid, i18nLabel: 'kysion.common.enum.Paid', color: 'green' },
-  { value: tradeStateSet.CancelPayment, i18nLabel: 'kysion.common.enum.CancelPayment', color: 'red' },
-  { value: tradeStateSet.Completed, i18nLabel: 'kysion.common.enum.Completed', color: 'blue' },
-  { value: tradeStateSet.Refunding, i18nLabel: 'kysion.common.enum.Refunding', color: 'purple' },
-  { value: tradeStateSet.Refunded, i18nLabel: 'kysion.common.enum.Refunded', color: 'cyan' },
-  { value: tradeStateSet.Timeout, i18nLabel: 'kysion.common.enum.Timeout', color: 'gray' },
-  { value: tradeStateSet.Closed, i18nLabel: 'kysion.common.enum.Closed', color: 'black' }
+  { value: tradeStateSet.PendingPayment, i18nLabel: 'kysion.common.enum.PendingPayment', color: 'orange', isFinal: false, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Paying, i18nLabel: 'kysion.common.enum.Paying', color: 'yellow', isFinal: false, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Paid, i18nLabel: 'kysion.common.enum.Paid', color: 'green', isFinal: false, canRefund: true, canFreeze: true },
+  { value: tradeStateSet.CancelPayment, i18nLabel: 'kysion.common.enum.CancelPayment', color: 'red', isFinal: true, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Completed, i18nLabel: 'kysion.common.enum.Completed', color: 'blue', isFinal: true, canRefund: true, canFreeze: true },
+  { value: tradeStateSet.Refunding, i18nLabel: 'kysion.common.enum.Refunding', color: 'purple', isFinal: false, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Refunded, i18nLabel: 'kysion.common.enum.Refunded', color: 'cyan', isFinal: true, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Timeout, i18nLabel: 'kysion.common.enum.Timeout', color: 'gray', isFinal: true, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Closed, i18nLabel: 'kysion.common.enum.Closed', color: 'black', isFinal: true, canRefund: false, canFreeze: false },
+  { value: tradeStateSet.Frozen, i18nLabel: 'kysion.common.enum.Frozen', color: 'indigo', isFinal: false, canRefund: true, canFreeze: false },
+  { value: tradeStateSet.Unfrozen, i18nLabel: 'kysion.common.enum.Unfrozen', color: 'green', isFinal: false, canRefund: true, canFreeze: true },
+  { value: tradeStateSet.UnfreezeFailed, i18nLabel: 'kysion.common.enum.UnfreezeFailed', color: 'red', isFinal: false, canRefund: true, canFreeze: true },
 ];
 
 // 交易状态映射
-export const TradeStateMap = new Map<TradeStateSet, TradeStateType>(TradeStateSetArr.map(item => [item.value, item]));
+export const TradeStateMap = new Map<TradeStateSet, TradeStateType>(
+  TradeStateSetArr.map(item => [item.value, item])
+);
 
+// 国际化映射（添加新状态）
 export const i18nTradeState = {
   zh_CN: {
     'kysion.common.enum.PendingPayment': '待支付',
@@ -317,7 +331,10 @@ export const i18nTradeState = {
     'kysion.common.enum.Refunding': '退款中',
     'kysion.common.enum.Refunded': '已退款',
     'kysion.common.enum.Timeout': '支付超时',
-    'kysion.common.enum.Closed': '已关闭'
+    'kysion.common.enum.Closed': '已关闭',
+    'kysion.common.enum.Frozen': '已冻结',
+    'kysion.common.enum.Unfrozen': '已解冻',
+    'kysion.common.enum.UnfreezeFailed': '解冻失败',
   },
   en_US: {
     'kysion.common.enum.PendingPayment': 'Pending Payment',
@@ -328,9 +345,24 @@ export const i18nTradeState = {
     'kysion.common.enum.Refunding': 'Refunding',
     'kysion.common.enum.Refunded': 'Refunded',
     'kysion.common.enum.Timeout': 'Timeout',
-    'kysion.common.enum.Closed': 'Closed'
-  }
+    'kysion.common.enum.Closed': 'Closed',
+    'kysion.common.enum.Frozen': 'Frozen',
+    'kysion.common.enum.Unfrozen': 'Unfrozen',
+    'kysion.common.enum.UnfreezeFailed': 'Unfreeze Failed',
+  },
+  // 可添加更多语言...
 };
+
+// 辅助函数：根据状态值获取状态配置
+export function getTradeState(value: TradeStateSet): TradeStateType | undefined {
+  return TradeStateMap.get(value);
+}
+
+// 辅助函数：检查状态是否在指定状态列表中
+export function isTradeStateIn(value: TradeStateSet, states: TradeStateSet[]): boolean {
+  return states.includes(value);
+}
+
 /**
  * **************************************************
  */

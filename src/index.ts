@@ -22,6 +22,7 @@ export * from './my';
 export * from './order';
 export * from './permission';
 export * from './position';
+export * from './promotion';
 export * from './role';
 export * from './setting';
 export * from './team';
