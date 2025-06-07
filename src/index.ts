@@ -13,6 +13,7 @@ export * from './employee';
 export * from './finance';
 export * from './goods';
 export * from './industry';
+export * from './invite';
 export * from './level'
 export * from './license';
 export * from './locales';
