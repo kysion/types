@@ -52,6 +52,8 @@ export class CompanyInfoType extends BaseModel<CompanyInfoType> {
   score: number = 0;
   // LOGO
   logoId: number = 0;
+  // 佣金
+  commissionRate: number = 0;
 
   constructor(initState: Partial<CompanyInfoType> = {}) {
     super();

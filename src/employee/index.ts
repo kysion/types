@@ -55,6 +55,8 @@ export class EmployeeInfoType extends BaseModel<EmployeeInfoType> {
   user: UserInfoType | null = null;
   // 所属团队列表，默认为空数组
   teamList: TeamInfoType[] = [];
+  // 佣金比例，默认为0
+  commissionRate: number = 0;
 
   /**
    * 构造函数，用于创建员工实例
