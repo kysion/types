@@ -215,7 +215,7 @@ export const tradeTypeSet = {
 export type TradeTypeSet = ValueOf<typeof tradeTypeSet>;
 
 // 交易类型颜色类型
-type TradeTypeColor = 'blue' | 'orange' | 'green' | 'purple' | 'gray' | 'brown' | 'cyan' | 'red' | 'yellow' | 'magenta' | 'black';
+type TradeTypeColor = 'blue' | 'orange' | 'green' | 'purple' | 'gray' | 'brown' | 'cyan' | 'red' | 'yellow' | 'magenta' | 'black' | undefined;
 
 // 交易类型数组
 export const TradeTypeSetArr: readonly TradeType[] = [
@@ -223,7 +223,7 @@ export const TradeTypeSetArr: readonly TradeType[] = [
   { value: tradeTypeSet.Consumption, i18nLabel: 'kysion.common.enum.Consumption', color: 'orange' },
   { value: tradeTypeSet.Refund, i18nLabel: 'kysion.common.enum.Refund', color: 'green' },
   { value: tradeTypeSet.Commission, i18nLabel: 'kysion.common.enum.Commission', color: 'purple' },
-  { value: tradeTypeSet.Deposit, i18nLabel: 'kysion.common.enum.Deposit', color: 'gray' },
+  { value: tradeTypeSet.Deposit, i18nLabel: 'kysion.common.enum.Deposit', color: undefined },
   { value: tradeTypeSet.EarnestMoney, i18nLabel: 'kysion.common.enum.EarnestMoney', color: 'brown' },
   { value: tradeTypeSet.Fee, i18nLabel: 'kysion.common.enum.Fee', color: 'cyan' },
   { value: tradeTypeSet.Withdraw, i18nLabel: 'kysion.common.enum.Withdraw', color: 'red' },
