@@ -69,6 +69,20 @@ export class CompanyInfoViewType extends CompanyInfoType {
   employee: EmployeeInfoType | null = null;
   user: UserInfoType | null = null;
 
+  fdAccountType: number = 0;
+  fdAllowExceed: number = 0;
+  fdLimitState: number = 0;
+  fdAccountId: number = 0;
+  fdBalance: number = 0;
+  fdCurrencyCode: string = '';
+  fdFrozenAmount: number = 0;
+  fdMonthAccountSum: number = 0;
+  fdPrecisionOfBalance: number = 0;
+  fdTodayAccountSum: number = 0;
+  fdWeekAccountSum: number = 0;
+  fdQuarterAccountSum: number = 0;
+  fdYearAccountSum: number = 0;
+
   constructor(initState: Partial<CompanyInfoViewType> = {}) {
     super(initState);
     Object.assign(this, cloneDeep(initState));

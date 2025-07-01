@@ -11,7 +11,12 @@ type AccountTypeIcon = 'fluent-mdl2:all-currency' |
   'iconfont:icon-alipay-r' |
   'iconfont:icon-wepay' |
   'iconfont:icon-unionpay' |
-  'icon-yizhifu';
+  'simple-icons:applepay' |
+  'simple-icons:paypal' |
+  'simple-icons:amazon' |
+  'mdi:cash' |
+  'cryptocurrency:btc' |
+  'mdi:dots-horizontal';
 
 // 账户类型类型
 export type AccountTypeType = {
@@ -23,18 +28,23 @@ export type AccountTypeType = {
 
 // 账户类型集合
 export const accountTypeSet = {
-  SystemAccount: 1,
-  BankCard: 2,
-  Alipay: 3,
-  WeChat: 4,
-  UnionPay: 5,
-  Yizhifu: 6
+  SystemAccount: 0,
+  BankCard: 1,
+  Alipay: 2,
+  WeChat: 3,
+  UnionPay: 4,
+  ApplePay: 5,
+  PayPal: 6,
+  AmazonPay: 7,
+  Cash: 8,
+  BlockchainWallet: 9,
+  Other: 100
 } as const;
 
 export type AccountTypeSet = ValueOf<typeof accountTypeSet>;
 
 // 账户类型颜色类型
-type AccountTypeColor = 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'cyan';
+type AccountTypeColor = 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'cyan' | 'gray' | 'yellow' | 'pink' | 'indigo' | 'teal';
 
 // 账户类型数组
 export const AccountTypeTypeArr: readonly AccountTypeType[] = [
@@ -43,7 +53,12 @@ export const AccountTypeTypeArr: readonly AccountTypeType[] = [
   { value: accountTypeSet.Alipay, i18nLabel: 'kysion.common.enum.pay.Alipay', icon: 'iconfont:icon-alipay-r', color: 'orange' },
   { value: accountTypeSet.WeChat, i18nLabel: 'kysion.common.enum.pay.WePay', icon: 'iconfont:icon-wepay', color: 'purple' },
   { value: accountTypeSet.UnionPay, i18nLabel: 'kysion.common.enum.pay.UnionPay', icon: 'iconfont:icon-unionpay', color: 'red' },
-  { value: accountTypeSet.Yizhifu, i18nLabel: 'kysion.common.enum.pay.Yizhifu', icon: 'icon-yizhifu', color: 'cyan' }
+  { value: accountTypeSet.ApplePay, i18nLabel: 'kysion.common.enum.pay.ApplePay', icon: 'simple-icons:applepay', color: 'gray' },
+  { value: accountTypeSet.PayPal, i18nLabel: 'kysion.common.enum.pay.PayPal', icon: 'simple-icons:paypal', color: 'cyan' },
+  { value: accountTypeSet.AmazonPay, i18nLabel: 'kysion.common.enum.pay.AmazonPay', icon: 'simple-icons:amazon', color: 'yellow' },
+  { value: accountTypeSet.Cash, i18nLabel: 'kysion.common.enum.pay.Cash', icon: 'mdi:cash', color: 'pink' },
+  { value: accountTypeSet.BlockchainWallet, i18nLabel: 'kysion.common.enum.pay.BlockchainWallet', icon: 'cryptocurrency:btc', color: 'indigo' },
+  { value: accountTypeSet.Other, i18nLabel: 'kysion.common.enum.pay.Other', icon: 'mdi:dots-horizontal', color: 'teal' }
 ];
 
 // 账户类型映射
@@ -86,22 +101,32 @@ export const AllowNegativeBalanceMap = new Map<AllowNegativeBalanceSet, AllowNeg
 
 export const i18nAccountType = {
   zh_CN: {
-    'kysion.common.enum.pay.SystemAccount': '系统默认账户',
+    'kysion.common.enum.pay.SystemAccount': '系统账户',
     'kysion.common.enum.pay.BankCard': '银行卡',
     'kysion.common.enum.pay.Alipay': '支付宝',
-    'kysion.common.enum.pay.WePay': '微信支付',
+    'kysion.common.enum.pay.WePay': '微信',
     'kysion.common.enum.pay.UnionPay': '云闪付',
-    'kysion.common.enum.pay.Yizhifu': '翼支付',
+    'kysion.common.enum.pay.ApplePay': 'ApplePay',
+    'kysion.common.enum.pay.PayPal': 'PayPal',
+    'kysion.common.enum.pay.AmazonPay': 'AmazonPay',
+    'kysion.common.enum.pay.Cash': '线下现金',
+    'kysion.common.enum.pay.BlockchainWallet': '区块链钱包',
+    'kysion.common.enum.pay.Other': '其他',
     'kysion.common.enum.pay.Forbidden': '禁止',
     'kysion.common.enum.pay.Allowed': '允许'
   },
   en_US: {
-    'kysion.common.enum.pay.SystemAccount': 'System Default Account',
+    'kysion.common.enum.pay.SystemAccount': 'System Account',
     'kysion.common.enum.pay.BankCard': 'Bank Card',
     'kysion.common.enum.pay.Alipay': 'Alipay',
-    'kysion.common.enum.pay.WePay': 'WePay',
+    'kysion.common.enum.pay.WePay': 'WeChat',
     'kysion.common.enum.pay.UnionPay': 'UnionPay',
-    'kysion.common.enum.pay.Yizhifu': 'Yizhifu',
+    'kysion.common.enum.pay.ApplePay': 'Apple Pay',
+    'kysion.common.enum.pay.PayPal': 'PayPal',
+    'kysion.common.enum.pay.AmazonPay': 'Amazon Pay',
+    'kysion.common.enum.pay.Cash': 'Offline Cash',
+    'kysion.common.enum.pay.BlockchainWallet': 'Blockchain Wallet',
+    'kysion.common.enum.pay.Other': 'Other',
     'kysion.common.enum.pay.Forbidden': 'Forbidden',
     'kysion.common.enum.pay.Allowed': 'Allowed'
   }
