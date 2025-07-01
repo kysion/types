@@ -209,13 +209,14 @@ export const tradeTypeSet = {
   Withdraw: 128,
   Recharge: 256,
   Revenue: 512,
+  ReversedAmount: 1024,
   Other: 8192
 } as const;
 
 export type TradeTypeSet = ValueOf<typeof tradeTypeSet>;
 
 // 交易类型颜色类型
-type TradeTypeColor = 'blue' | 'orange' | 'green' | 'purple' | 'gray' | 'brown' | 'cyan' | 'red' | 'yellow' | 'magenta' | 'black' | undefined;
+type TradeTypeColor = 'blue' | 'orange' | 'green' | 'purple' | 'gray' | 'brown' | 'cyan' | 'red' | 'yellow' | 'magenta' | 'gray' | 'black' | undefined;
 
 // 交易类型数组
 export const TradeTypeSetArr: readonly TradeType[] = [
@@ -229,6 +230,7 @@ export const TradeTypeSetArr: readonly TradeType[] = [
   { value: tradeTypeSet.Withdraw, i18nLabel: 'kysion.common.enum.Withdraw', color: 'red' },
   { value: tradeTypeSet.Recharge, i18nLabel: 'kysion.common.enum.Recharge', color: 'yellow' },
   { value: tradeTypeSet.Revenue, i18nLabel: 'kysion.common.enum.Revenue', color: 'magenta' },
+  { value: tradeTypeSet.ReversedAmount, i18nLabel: 'kysion.common.enum.ReversedAmount', color: 'gray' },
   { value: tradeTypeSet.Other, i18nLabel: 'kysion.common.enum.Other', color: 'black' }
 ];
 
@@ -247,6 +249,7 @@ export const i18nTrade = {
     'kysion.common.enum.Withdraw': '提现',
     'kysion.common.enum.Recharge': '充值',
     'kysion.common.enum.Revenue': '营收',
+    'kysion.common.enum.ReversedAmount': '冲正',
     'kysion.common.enum.Other': '其它'
   },
   en_US: {
@@ -260,6 +263,7 @@ export const i18nTrade = {
     'kysion.common.enum.Withdraw': 'Withdraw',
     'kysion.common.enum.Recharge': 'Recharge',
     'kysion.common.enum.Revenue': 'Revenue',
+    'kysion.common.enum.ReversedAmount': 'Reversed Amount',
     'kysion.common.enum.Other': 'Other'
   }
 };
@@ -278,6 +282,7 @@ export type TradeStateType = {
 
 // 交易状态集合（添加新状态）
 export const tradeStateSet = {
+  None: 0,
   PendingPayment: 1,
   Paying: 2,
   Paid: 4,
@@ -301,6 +306,7 @@ export type TradeStatusColor =
 
 // 交易状态数组（添加新状态配置）
 export const TradeStateSetArr: readonly TradeStateType[] = [
+  { value: tradeStateSet.None, i18nLabel: 'kysion.common.enum.None', color: 'gray', isFinal: true, canRefund: false, canFreeze: false },
   { value: tradeStateSet.PendingPayment, i18nLabel: 'kysion.common.enum.PendingPayment', color: 'orange', isFinal: false, canRefund: false, canFreeze: false },
   { value: tradeStateSet.Paying, i18nLabel: 'kysion.common.enum.Paying', color: 'yellow', isFinal: false, canRefund: false, canFreeze: false },
   { value: tradeStateSet.Paid, i18nLabel: 'kysion.common.enum.Paid', color: 'green', isFinal: false, canRefund: true, canFreeze: true },
@@ -323,6 +329,7 @@ export const TradeStateMap = new Map<TradeStateSet, TradeStateType>(
 // 国际化映射（添加新状态）
 export const i18nTradeState = {
   zh_CN: {
+    'kysion.common.enum.None': '无',
     'kysion.common.enum.PendingPayment': '待支付',
     'kysion.common.enum.Paying': '支付中',
     'kysion.common.enum.Paid': '已支付',
@@ -337,6 +344,7 @@ export const i18nTradeState = {
     'kysion.common.enum.UnfreezeFailed': '解冻失败',
   },
   en_US: {
+    'kysion.common.enum.None': 'None',
     'kysion.common.enum.PendingPayment': 'Pending Payment',
     'kysion.common.enum.Paying': 'Paying',
     'kysion.common.enum.Paid': 'Paid',
